@@ -1,0 +1,105 @@
+interface Column {
+    type?: string,
+
+    label?: string,
+    shortLabel?: string,
+    align?: 'left' | 'right' | 'center',
+    hidden?: boolean,
+    sortable?: boolean,
+    searchable?: boolean,
+    invisible?: boolean,
+    clickable?: boolean,
+
+    valueFrom?: string,
+    displayFrom?: string,
+    default?: string | number,
+    sqlSelect?: string,
+    relation?: string,
+    relationCount?: boolean
+    width?: string | number,
+    cssClass?: string
+    headCssClass?: string,
+}
+
+interface TextColumn extends Column {
+    type?: 'text'
+}
+
+interface NumberColumn extends Column {
+    type: 'nubmer',
+    format: string
+}
+
+interface ImageColumn extends Column {
+    type: 'image',
+    width?: number,
+    height?: number,
+    options?: {
+        mode?: 'exact' | 'portrait' | 'landscape' | 'auto' | 'fit' | 'crop',
+        offset?: number[],
+        quality?: number,
+        sharpen?: number
+    },
+}
+
+interface SwitchColumn extends Column {
+    type: 'switch',
+    options?: string[]
+}
+
+interface SummaryColumn extends Column {
+    type: 'summary',
+    limitChars?: number,
+    endChars?: string
+}
+
+interface DateTimeColumn extends Column {
+    type: 'datetime',
+    format?: string,
+    useTimezone?: boolean
+}
+
+interface DateColumn extends Column {
+    type: 'date',
+    useTimezone?: boolean
+}
+
+interface TimeColumn extends Column {
+    type: 'time',
+    useTimezone?: boolean
+}
+
+interface TimeSinceColumn extends Column {
+    type: 'timesince'
+}
+
+interface TimeTenseColumn extends Column {
+    type: 'timetense'
+}
+
+interface SelectableColumn extends Column {
+    type: 'selectable',
+    options?: { [key: string]: string } | string
+}
+
+interface PartialColumn extends Column {
+    type: 'partial',
+    path?: string
+}
+
+interface ColorPickerColumn extends Column {
+    type: 'colorpicker'
+}
+
+interface CustomColumn extends Column {
+    type: string,
+    [property: string]: any,
+}
+
+interface Root {
+    columns: {
+        [column: string]: TextColumn | NumberColumn | ImageColumn | SwitchColumn | SummaryColumn
+        | DateTimeColumn | DateColumn | TimeColumn | TimeSinceColumn | TimeTenseColumn
+        | SelectableColumn | PartialColumn | ColorPickerColumn | CustomColumn
+    }
+}

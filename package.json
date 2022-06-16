@@ -1,0 +1,7 @@
+{
+    "private": true,
+    "dependencies": {
+        "tslib": "^2.4.0",
+        "typescript-json-schema": "^0.53.1"
+    }
+}
