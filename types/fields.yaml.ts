@@ -320,7 +320,10 @@ interface TagListField extends Field {
 //
 
 interface Fields {
-    [field: string]: TextField | NumberField
+    [field: string]:
+    CustomField | TextField | NumberField | PasswordField | EmailField | TextareaField | DropdownField | RadioListField | BalloonSelectorField
+    | CheckboxField | CheckboxListField | SwitchField | SectionField | HintField | RulerField | PartialField | CodeEditorField | ColorPickerField | DataTableField | DatePickerField
+    | FileUploadField | MarkdownEditorField | MediaFinderField | NestedFormField | RecordFinderField | RelationField | RepeaterField | RichEditorField | SensitiveField | TagListField
 }
 
 interface Root {

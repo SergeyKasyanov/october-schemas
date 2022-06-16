@@ -3,8 +3,9 @@ import stringify from 'safe-stable-stringify';
 import * as TJS from "typescript-json-schema";
 import * as fs from 'fs';
 
-const types = {
-    './types/columns.yaml.ts': './schemas/columns.yaml.json'
+const types: { [source: string]: string } = {
+    './types/columns.yaml.ts': './schemas/columns.yaml.json',
+    './types/fields.yaml.ts': './schemas/fields.yaml.json',
 };
 
 if (!fs.existsSync('./schemas')) {
@@ -26,3 +27,5 @@ for (const source in types) {
         }
     }
 }
+
+console.log('Done');

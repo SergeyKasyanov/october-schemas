@@ -17,7 +17,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -73,61 +73,12 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
         },
-        "Columns": {
-            "additionalProperties": {
-                "anyOf": [
-                    {
-                        "$ref": "#/definitions/TextColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/NumberColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/ImageColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/SwitchColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/SummaryColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/DateTimeColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/DateColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/TimeColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/TimeSinceColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/TimeTenseColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/SelectableColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/PartialColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/ColorPickerColumn"
-                    },
-                    {
-                        "$ref": "#/definitions/CustomColumn"
-                    }
-                ]
-            },
-            "type": "object"
-        },
         "CustomColumn": {
+            "additionalProperties": {},
             "properties": {
                 "align": {
                     "enum": [
@@ -143,7 +94,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -196,7 +147,6 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
@@ -217,7 +167,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -276,7 +226,6 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
@@ -297,7 +246,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -359,7 +308,6 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
@@ -380,7 +328,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -464,7 +412,6 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
@@ -485,7 +432,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -545,7 +492,6 @@
             },
             "required": [
                 "format",
-                "label",
                 "type"
             ],
             "type": "object"
@@ -566,7 +512,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -625,7 +571,6 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
@@ -646,7 +591,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -715,7 +660,6 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
@@ -736,7 +680,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -798,7 +742,6 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
@@ -819,7 +762,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -881,7 +824,6 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
@@ -902,7 +844,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -957,9 +899,6 @@
                     ]
                 }
             },
-            "required": [
-                "label"
-            ],
             "type": "object"
         },
         "TimeColumn": {
@@ -978,7 +917,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -1037,7 +976,6 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
@@ -1058,7 +996,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -1114,7 +1052,6 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
@@ -1135,7 +1072,7 @@
                 "cssClass": {
                     "type": "string"
                 },
-                "defaults": {
+                "default": {
                     "type": [
                         "string",
                         "number"
@@ -1191,7 +1128,6 @@
                 }
             },
             "required": [
-                "label",
                 "type"
             ],
             "type": "object"
@@ -1199,7 +1135,53 @@
     },
     "properties": {
         "columns": {
-            "$ref": "#/definitions/Columns"
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/TextColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/NumberColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/ImageColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/SwitchColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/SummaryColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/DateTimeColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/DateColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/TimeColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/TimeSinceColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/TimeTenseColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/SelectableColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/PartialColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/ColorPickerColumn"
+                    },
+                    {
+                        "$ref": "#/definitions/CustomColumn"
+                    }
+                ]
+            },
+            "type": "object"
         }
     },
     "required": [
