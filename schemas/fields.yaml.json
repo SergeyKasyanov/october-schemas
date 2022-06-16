@@ -2403,6 +2403,13 @@
                     "type": "boolean"
                 },
                 "size": {
+                    "enum": [
+                        "giant",
+                        "huge",
+                        "large",
+                        "small",
+                        "tiny"
+                    ],
                     "type": "string"
                 },
                 "span": {
@@ -4163,6 +4170,13 @@
                     "type": "boolean"
                 },
                 "size": {
+                    "enum": [
+                        "giant",
+                        "huge",
+                        "large",
+                        "small",
+                        "tiny"
+                    ],
                     "type": "string"
                 },
                 "span": {
@@ -4227,11 +4241,6 @@
                     "type": "object"
                 }
             },
-            "required": [
-                "fields",
-                "secondaryTabs",
-                "tabs"
-            ],
             "type": "object"
         },
         "RulerField": {
@@ -5316,6 +5325,13 @@
                     "type": "boolean"
                 },
                 "size": {
+                    "enum": [
+                        "giant",
+                        "huge",
+                        "large",
+                        "small",
+                        "tiny"
+                    ],
                     "type": "string"
                 },
                 "span": {

@@ -3,18 +3,29 @@ import stringify from 'safe-stable-stringify';
 import * as TJS from "typescript-json-schema";
 import * as fs from 'fs';
 
-const types: { [source: string]: string } = {
-    './types/columns.yaml.ts': './schemas/columns.yaml.json',
-    './types/fields.yaml.ts': './schemas/fields.yaml.json',
+const configs: { [key: string]: { source: string, destination: string } } = {
+    'columns.yaml': {
+        source: './types/columns.yaml.ts',
+        destination: './schemas/columns.yaml.json',
+    },
+    'fields.yaml': {
+        source: './types/fields.yaml.ts',
+        destination: './schemas/fields.yaml.json',
+    }
 };
 
 if (!fs.existsSync('./schemas')) {
     fs.mkdirSync('./schemas');
 }
 
-for (const source in types) {
-    if (Object.prototype.hasOwnProperty.call(types, source)) {
-        const destination = types[source];
+for (const key in configs) {
+    if (Object.prototype.hasOwnProperty.call(configs, key)) {
+        const config = configs[key];
+
+        console.log('Generating schema for ' + key + '...');
+
+        const source = config.source;
+        const destination = config.destination;
 
         const program: TJS.Program = TJS.getProgramFromFiles([resolve(source)],);
         const settings: TJS.PartialArgs = { required: true, };
@@ -28,4 +39,4 @@ for (const source in types) {
     }
 }
 
-console.log('Done');
+console.log('Done.');

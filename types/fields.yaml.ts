@@ -74,7 +74,7 @@ interface EmailField extends Field {
 
 interface TextareaField extends Field {
     type: 'textarea',
-    size?: 'tiny' | 'small' | 'large' | 'huge' | 'giant' | string
+    size?: 'tiny' | 'small' | 'large' | 'huge' | 'giant',
 }
 
 interface DropdownField extends Field {
@@ -225,7 +225,7 @@ interface FileUploadField extends Field {
 
 interface MarkdownEditorField extends Field {
     type: 'markdown',
-    size?: 'tiny' | 'small' | 'large' | 'huge' | 'giant' | string,
+    size?: 'tiny' | 'small' | 'large' | 'huge' | 'giant',
     mode?: 'tab' | 'split',
 }
 
@@ -295,7 +295,7 @@ interface RepeaterField extends Field {
 interface RichEditorField extends Field {
     type: 'richeditor',
     toolbarButtons?: string | 'fullscreen' | 'bold' | 'italic' | 'underline' | 'strikeThrough' | 'subscript' | 'superscript' | 'fontFamily' | 'fontSize' | '|' | 'color' | 'emoticons' | 'inlineStyle' | 'paragraphStyle' | '|' | 'paragraphFormat' | 'align' | 'formatOL' | 'formatUL' | 'outdent' | 'indent' | 'quote' | 'insertHR' | '-' | 'insertLink' | 'insertImage' | 'insertVideo' | 'insertAudio' | 'insertFile' | 'insertTable' | 'undo' | 'redo' | 'clearFormatting' | 'selectAll' | 'html',
-    size?: 'tiny' | 'small' | 'large' | 'huge' | 'giant' | string
+    size?: 'tiny' | 'small' | 'large' | 'huge' | 'giant',
 }
 
 interface SensitiveField extends Field {
@@ -327,11 +327,11 @@ interface Fields {
 }
 
 interface Root {
-    fields: Fields,
-    tabs: {
+    fields?: Fields,
+    tabs?: {
         fields: Fields
     },
-    secondaryTabs: {
+    secondaryTabs?: {
         fields: Fields
     }
 }
