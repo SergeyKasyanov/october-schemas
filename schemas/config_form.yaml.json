@@ -5167,16 +5167,56 @@
         "permissions": {
             "properties": {
                 "modelCreate": {
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
                 },
                 "modelDelete": {
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
                 },
                 "modelPreview": {
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
                 },
                 "modelUpdate": {
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
                 }
             },
             "type": "object"

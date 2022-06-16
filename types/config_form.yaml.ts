@@ -44,9 +44,9 @@ export interface ConfigFormRoot {
         flashDelete?: string,
     },
     permissions?: {
-        modelCreate?: string,
-        modelUpdate?: string,
-        modelDelete?: string,
-        modelPreview?: string,
+        modelCreate?: string | string[],
+        modelUpdate?: string | string[],
+        modelDelete?: string | string[],
+        modelPreview?: string | string[],
     },
 }
