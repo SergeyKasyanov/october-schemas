@@ -4,19 +4,9 @@
         "BalloonSelectorField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -174,19 +164,9 @@
         "CheckboxField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -328,19 +308,9 @@
         "CheckboxListField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -501,19 +471,9 @@
         "CodeEditorField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -665,19 +625,9 @@
         "ColorPickerField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -831,19 +781,9 @@
             "additionalProperties": {},
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -983,19 +923,9 @@
                     "type": "boolean"
                 },
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -1269,19 +1199,9 @@
         "DatePickerField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -1457,19 +1377,9 @@
         "DropdownField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -1633,19 +1543,9 @@
         "EmailField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -1921,19 +1821,9 @@
                     "type": "boolean"
                 },
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -2143,19 +2033,9 @@
         "HintField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -2309,19 +2189,9 @@
         "MarkdownEditorField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -2478,19 +2348,9 @@
         "MediaFinderField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -2646,19 +2506,9 @@
         "NestedFormField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -2812,19 +2662,9 @@
         "NumberField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -2979,19 +2819,9 @@
         "PartialField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -3134,19 +2964,9 @@
         "PasswordField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -3311,19 +3131,9 @@
         "RadioListField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -3481,19 +3291,9 @@
         "RecordFinderField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -3687,19 +3487,9 @@
         "RelationField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -3857,19 +3647,9 @@
         "RepeaterField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -4083,19 +3863,9 @@
         "RichEditorField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -4248,19 +4018,9 @@
         "RulerField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -4400,19 +4160,9 @@
         "SectionField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -4555,19 +4305,9 @@
                     "type": "boolean"
                 },
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -4713,19 +4453,9 @@
         "SwitchField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -4867,19 +4597,9 @@
         "TagListField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -5057,19 +4777,9 @@
         "TextField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"
@@ -5211,19 +4921,9 @@
         "TextareaField": {
             "properties": {
                 "attributes": {
-                    "allOf": [
-                        {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        }
-                    ]
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
                 },
                 "autoFocus": {
                     "type": "boolean"

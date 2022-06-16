@@ -34,7 +34,7 @@ interface Field {
     context?: 'create' | 'update' | 'preview' | string | string[],
     required?: boolean,
     stretch?: boolean,
-    attributes?: string[] & object,
+    attributes?: object,
     containerAttributes?: string[] & object,
     cssClass?: string,
     dependsOn?: string | string[],
