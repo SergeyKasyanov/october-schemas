@@ -13,12 +13,13 @@ interface Column {
     valueFrom?: string,
     displayFrom?: string,
     default?: string | number,
-    sqlSelect?: string,
+    select?: string,
     relation?: string,
     relationCount?: boolean
     width?: string | number,
     cssClass?: string
     headCssClass?: string,
+    permissions?: string | string[]
 }
 
 interface TextColumn extends Column {

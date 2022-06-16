@@ -38,6 +38,19 @@
                 "label": {
                     "type": "string"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -47,14 +60,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -115,6 +128,19 @@
                 "label": {
                     "type": "string"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -124,14 +150,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "type": "string"
@@ -188,6 +214,19 @@
                 "label": {
                     "type": "string"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -197,14 +236,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -270,6 +309,19 @@
                 "label": {
                     "type": "string"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -279,14 +331,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -380,6 +432,19 @@
                     },
                     "type": "object"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -389,14 +454,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -456,6 +521,19 @@
                 "label": {
                     "type": "string"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -465,14 +543,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -536,6 +614,19 @@
                 "path": {
                     "type": "string"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -545,14 +636,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -625,6 +716,19 @@
                         }
                     ]
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -634,14 +738,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -707,6 +811,19 @@
                 "limitChars": {
                     "type": "number"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -716,14 +833,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -789,6 +906,19 @@
                     },
                     "type": "array"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -798,14 +928,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -865,6 +995,19 @@
                 "label": {
                     "type": "string"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -874,14 +1017,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -941,6 +1084,19 @@
                 "label": {
                     "type": "string"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -950,14 +1106,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -1020,6 +1176,19 @@
                 "label": {
                     "type": "string"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -1029,14 +1198,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -1096,6 +1265,19 @@
                 "label": {
                     "type": "string"
                 },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
                 "relation": {
                     "type": "string"
                 },
@@ -1105,14 +1287,14 @@
                 "searchable": {
                     "type": "boolean"
                 },
+                "select": {
+                    "type": "string"
+                },
                 "shortLabel": {
                     "type": "string"
                 },
                 "sortable": {
                     "type": "boolean"
-                },
-                "sqlSelect": {
-                    "type": "string"
                 },
                 "type": {
                     "enum": [

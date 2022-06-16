@@ -13,7 +13,13 @@
                     ],
                     "type": "number"
                 },
+                "dependsOn": {
+                    "type": "string"
+                },
                 "label": {
+                    "type": "string"
+                },
+                "modelScope": {
                     "type": "string"
                 },
                 "type": {
@@ -61,6 +67,9 @@
                 "default": {
                     "type": "string"
                 },
+                "dependsOn": {
+                    "type": "string"
+                },
                 "label": {
                     "type": "string"
                 },
@@ -91,7 +100,13 @@
                 "conditions": {
                     "type": "string"
                 },
+                "dependsOn": {
+                    "type": "string"
+                },
                 "label": {
+                    "type": "string"
+                },
+                "modelScope": {
                     "type": "string"
                 },
                 "options": {
@@ -136,6 +151,9 @@
                     },
                     "type": "array"
                 },
+                "dependsOn": {
+                    "type": "string"
+                },
                 "label": {
                     "type": "string"
                 },
@@ -171,6 +189,9 @@
                         "group"
                     ],
                     "type": "string"
+                },
+                "valueFrom": {
+                    "type": "string"
                 }
             },
             "required": [
@@ -191,6 +212,9 @@
                         }
                     },
                     "type": "object"
+                },
+                "dependsOn": {
+                    "type": "string"
                 },
                 "label": {
                     "type": "string"
@@ -226,7 +250,13 @@
                     ],
                     "type": "number"
                 },
+                "dependsOn": {
+                    "type": "string"
+                },
                 "label": {
+                    "type": "string"
+                },
+                "modelScope": {
                     "type": "string"
                 },
                 "type": {
@@ -261,6 +291,9 @@
                         }
                     },
                     "type": "object"
+                },
+                "dependsOn": {
+                    "type": "string"
                 },
                 "label": {
                     "type": "string"

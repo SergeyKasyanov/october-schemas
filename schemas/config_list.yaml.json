@@ -1,0 +1,147 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": {},
+    "properties": {
+        "customViewPath": {
+            "type": "string"
+        },
+        "defaultSort": {
+            "properties": {
+                "column": {
+                    "type": "string"
+                },
+                "direction": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "column",
+                "direction"
+            ],
+            "type": "object"
+        },
+        "deleteMessage": {
+            "type": "string"
+        },
+        "filter": {
+            "type": "string"
+        },
+        "list": {
+            "anyOf": [
+                {
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "modelClass": {
+            "type": "string"
+        },
+        "noRecordsDeletedMessage": {
+            "type": "string"
+        },
+        "noRecordsMessage": {
+            "type": "string"
+        },
+        "recordOnClick": {
+            "type": "string"
+        },
+        "recordUrl": {
+            "type": "string"
+        },
+        "recordsPerPage": {
+            "type": "number"
+        },
+        "showCheckboxes": {
+            "type": "boolean"
+        },
+        "showPageNumbers": {
+            "type": "boolean"
+        },
+        "showSetup": {
+            "type": "boolean"
+        },
+        "showSorting": {
+            "type": "boolean"
+        },
+        "structure": {
+            "properties": {
+                "dragRow": {
+                    "type": "boolean"
+                },
+                "maxDepth": {
+                    "type": "number"
+                },
+                "showReorder": {
+                    "type": "boolean"
+                },
+                "showTree": {
+                    "type": "boolean"
+                },
+                "treeExpanded": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "showReorder",
+                "showTree",
+                "treeExpanded"
+            ],
+            "type": "object"
+        },
+        "title": {
+            "type": "string"
+        },
+        "toolbar": {
+            "properties": {
+                "buttons": {
+                    "type": "string"
+                },
+                "search": {
+                    "anyOf": [
+                        {
+                            "properties": {
+                                "mode": {
+                                    "enum": [
+                                        "all",
+                                        "any",
+                                        "exact"
+                                    ],
+                                    "type": "string"
+                                },
+                                "prompt": {
+                                    "type": "string"
+                                },
+                                "scope": {
+                                    "type": "string"
+                                },
+                                "searchOnEnter": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        }
+    },
+    "required": [
+        "list",
+        "modelClass",
+        "title"
+    ],
+    "type": "object"
+}

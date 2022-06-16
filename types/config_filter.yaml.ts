@@ -1,6 +1,8 @@
 interface Scope {
     label: string,
     type: string,
+    modelScope?: string,
+    dependsOn?: string
 }
 
 interface CheckboxScope extends Scope {
@@ -20,8 +22,7 @@ interface TextScope extends Scope {
     conditions?: {
         exact?: boolean | string,
         contains?: boolean | string
-    },
-    modelScope?: string
+    }
 }
 
 interface NumberScope extends Scope {
@@ -30,7 +31,6 @@ interface NumberScope extends Scope {
         greater?: string,
         between?: string
     },
-    modelScope?: string
 }
 
 interface DropdownScope extends Scope {
@@ -42,8 +42,8 @@ interface DropdownScope extends Scope {
 interface GroupScope extends Scope {
     type: 'group',
     nameFrom?: string,
+    valueFrom?: string,
     modelClass?: string,
-    modelScope?: string
     options?: string | string[] | object,
     conditions?: string,
     default?: string[]
@@ -54,7 +54,6 @@ interface DateScope extends Scope {
     default?: string,
     minDate?: string,
     maxDate?: string,
-    modelScope?: string,
     conditions?: {
         equals?: boolean,
         between?: boolean | string,

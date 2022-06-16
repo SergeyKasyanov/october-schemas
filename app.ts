@@ -12,6 +12,10 @@ const configs: { [key: string]: { source: string, destination: string } } = {
         source: './types/fields.yaml.ts',
         destination: './schemas/fields.yaml.json',
     },
+    'config_list.yaml': {
+        source: './types/config_list.yaml.ts',
+        destination: './schemas/config_list.yaml.json',
+    },
     'config_filter.yaml': {
         source: './types/config_filter.yaml.ts',
         destination: './schemas/config_filter.yaml.json',
