@@ -1,4 +1,4 @@
-interface Root {
+export interface ConfigImportExportRoot {
     defaultRedirect?: string,
 
     defaultFormatOptions?: {

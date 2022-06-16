@@ -62,7 +62,7 @@ interface DateScope extends Scope {
     }
 }
 
-interface Root {
+export interface ConfigFilterRoot {
     scopes: {
         [scope: string]: CheckboxScope | SwitchScope | TextScope | NumberScope | DropdownScope | GroupScope | DateScope
     }

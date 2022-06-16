@@ -1,4 +1,6 @@
-interface Root {
+import { FieldsRoot } from "./fields.yaml"
+
+export interface ConfigFormRoot {
     // required
     name: string,
     form: string | object,
@@ -7,7 +9,7 @@ interface Root {
     // pages
     create?: {
         title: string,
-        form?: string | object,
+        form?: string | FieldsRoot,
         redirect?: string,
         redirectClose?: string,
         customMessages?: {
@@ -16,7 +18,7 @@ interface Root {
     },
     update?: {
         title: string,
-        form?: string | object,
+        form?: string | FieldsRoot,
         redirect?: string,
         redirectClose?: string,
         customMessages?: {
@@ -27,7 +29,7 @@ interface Root {
     },
     preview?: {
         title: string,
-        form?: string | object,
+        form?: string | FieldsRoot,
         customMessages?: {
             notFound?: string,
         }

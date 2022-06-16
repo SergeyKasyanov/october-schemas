@@ -97,7 +97,7 @@ interface CustomColumn extends Column {
     [property: string]: any,
 }
 
-interface Root {
+export interface ColumnsRoot {
     columns: {
         [column: string]: TextColumn | NumberColumn | ImageColumn | SwitchColumn | SummaryColumn
         | DateTimeColumn | DateColumn | TimeColumn | TimeSinceColumn | TimeTenseColumn

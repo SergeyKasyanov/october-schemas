@@ -1,6 +1,9 @@
+import { ColumnsRoot } from "./columns.yaml"
+import { FieldsRoot } from "./fields.yaml"
+
 interface Mode {
-    form?: string | object,
-    list?: string | object,
+    form?: string | FieldsRoot,
+    list?: string | ColumnsRoot,
     showFlash?: boolean,
     showSearch?: boolean,
     showSorting?: boolean,
@@ -38,7 +41,7 @@ interface ManageMode extends Mode {
     context?: 'create' | 'update' | string
 }
 
-interface Root {
+export interface ConfigRelationRoot {
     [relation: string]: {
         label: string,
         view?: ViewMode,

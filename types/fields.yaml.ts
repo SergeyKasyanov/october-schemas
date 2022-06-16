@@ -240,7 +240,7 @@ interface MediaFinderField extends Field {
 interface NestedFormField extends Field {
     type: 'nestedform',
     showPanel?: boolean,
-    form: string | Root
+    form: string | FieldsRoot
 }
 
 interface RecordFinderField extends Field {
@@ -272,7 +272,7 @@ interface RelationField extends Field {
 
 interface RepeaterField extends Field {
     type: 'repeater',
-    form: string | Root,
+    form: string | FieldsRoot,
     prompt?: string,
     displayMode?: 'accordion' | 'builder',
     itemsExpanded?: boolean,
@@ -284,7 +284,7 @@ interface RepeaterField extends Field {
             name: string,
             description?: string,
             icon?: string,
-            fields: Root,
+            fields: FieldsRoot,
         }
     },
     groupKeyFrom?: string,
@@ -316,7 +316,7 @@ interface TagListField extends Field {
 }
 
 //
-// Root
+// FieldsRoot
 //
 
 interface Fields {
@@ -326,7 +326,7 @@ interface Fields {
     | FileUploadField | MarkdownEditorField | MediaFinderField | NestedFormField | RecordFinderField | RelationField | RepeaterField | RichEditorField | SensitiveField | TagListField
 }
 
-interface Root {
+export interface FieldsRoot {
     fields?: Fields,
     tabs?: {
         fields: Fields

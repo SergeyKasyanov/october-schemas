@@ -1,7 +1,9 @@
-interface Root {
+import { ColumnsRoot } from "./columns.yaml"
+
+export interface ConfigListRoot {
     // required
     title: string,
-    list: string | object,
+    list: string | ColumnsRoot,
     modelClass: string,
 
     // optional
