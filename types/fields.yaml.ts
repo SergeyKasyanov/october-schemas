@@ -10,6 +10,10 @@ interface Preset {
     prefixInput?: string,
 }
 
+//
+// Fields
+//
+
 interface Field {
     label?: string,
     value?: any,
@@ -39,6 +43,10 @@ interface Field {
     preset?: string | Preset,
     permissions?: string | string[],
     placeholder?: string,
+}
+
+interface CustomField extends Field {
+    [property: string]: any,
 }
 
 interface TextField extends Field {
@@ -104,9 +112,212 @@ interface SwitchField extends Field {
     default?: boolean
 }
 
-interface CustomField extends Field {
-    [property: string]: any,
+//
+// UI
+//
+
+interface SectionField extends Field {
+    type: 'section'
 }
+
+interface HintField extends Field {
+    type: 'hint',
+    mode?: 'tip' | 'info' | 'warning' | 'danger' | 'success',
+    path: string
+}
+
+interface RulerField extends Field {
+    type: 'ruler'
+}
+
+interface PartialField extends Field {
+    type: 'partial',
+    path?: string
+}
+
+//
+// Widgets
+//
+
+interface CodeEditorField extends Field {
+    type: 'codeeditor',
+    language?: 'html' | 'css' | 'php' | 'javascript' | string,
+    showGutter?: boolean,
+    wrapWords?: boolean,
+    fontSize?: number,
+}
+
+interface ColorPickerField extends Field {
+    type: 'colorpicker',
+    availableColors?: string | string[]
+}
+
+interface DataTableField extends Field {
+    type: 'datatable',
+    adding?: boolean,
+    deleting?: boolean,
+    searching?: boolean,
+    recordsPerPage?: number | false,
+    columns: {
+        [column: string]: {
+            title: string,
+            type: 'string' | 'checkbox' | 'dropdown' | 'autocomplete',
+            width?: number,
+            readOnly?: boolean,
+            options?: string,
+            validation?: {
+                integer?: {
+                    allowNegative?: boolean,
+                    message: string
+                },
+                float?: {
+                    allowNegative?: boolean,
+                    message: string
+                },
+                length?: {
+                    min: number,
+                    max: number,
+                    message: string
+                },
+                regex?: {
+                    pattern: string,
+                    message: string
+                },
+                required: {
+                    message: string
+                }
+            }
+        }
+    }
+}
+
+interface DatePickerField extends Field {
+    type: 'datepicker',
+    mode: 'date' | 'datetime' | 'time',
+    format?: string,
+    minDate?: string,
+    maxDate?: string,
+    firstDay?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+    showWeekNumber?: boolean,
+    useTimezone?: boolean
+}
+
+interface FileUploadField extends Field {
+    type: 'fileupload',
+    mode?: 'file' | 'image',
+    size?: 'tiny' | 'small' | 'large' | 'huge' | 'giant' | 'adaptive',
+    imageWidth?: number,
+    imageHeight?: number,
+    fileTypes?: string,
+    mimeTypes?: string,
+    maxFilesize?: number,
+    maxFiles?: number,
+    useCaption?: boolean,
+    prompt?: string,
+    attachOnUpload?: boolean,
+    thumbOptions?: {
+        mode?: 'exact' | 'portrait' | 'landscape' | 'auto' | 'fit' | 'crop',
+        offset?: number[],
+        quality?: number,
+        sharpen?: number
+    },
+}
+
+interface MarkdownEditorField extends Field {
+    type: 'markdown',
+    size?: 'tiny' | 'small' | 'large' | 'huge' | 'giant' | string,
+    mode?: 'tab' | 'split',
+}
+
+interface MediaFinderField extends Field {
+    type: 'mediafinder',
+    mode?: 'file' | 'image',
+    imageWidth?: number,
+    imageHeight?: number,
+    maxItems?: number
+}
+
+interface NestedFormField extends Field {
+    type: 'nestedform',
+    showPanel?: boolean,
+    form: string | Root
+}
+
+interface RecordFinderField extends Field {
+    type: 'recordfinder',
+    keyFrom?: string,
+    nameFrom?: string,
+    descriptionFrom?: string,
+    title?: string,
+    prompt?: string,
+    list: string | object,
+    recordsPerPage?: number,
+    conditions?: string,
+    scope?: string,
+    searchMode?: 'all' | 'any' | 'exact',
+    searchScope?: string,
+    useRelation?: boolean,
+    modelClass?: string,
+}
+
+interface RelationField extends Field {
+    type: 'relation',
+    nameFrom?: string,
+    select?: string,
+    order?: 'asc' | 'desc' | string,
+    emptyOption?: string,
+    scope?: string,
+    useController?: boolean,
+}
+
+interface RepeaterField extends Field {
+    type: 'repeater',
+    form: string | Root,
+    prompt?: string,
+    displayMode?: 'accordion' | 'builder',
+    itemsExpanded?: boolean,
+    titleFrom?: string,
+    minItems?: number,
+    maxItems?: number,
+    groups: string | {
+        [group: string]: {
+            name: string,
+            description?: string,
+            icon?: string,
+            fields: Root,
+        }
+    },
+    groupKeyFrom?: string,
+    showReorder?: boolean,
+    showDuplicate?: boolean,
+}
+
+interface RichEditorField extends Field {
+    type: 'richeditor',
+    toolbarButtons?: string | 'fullscreen' | 'bold' | 'italic' | 'underline' | 'strikeThrough' | 'subscript' | 'superscript' | 'fontFamily' | 'fontSize' | '|' | 'color' | 'emoticons' | 'inlineStyle' | 'paragraphStyle' | '|' | 'paragraphFormat' | 'align' | 'formatOL' | 'formatUL' | 'outdent' | 'indent' | 'quote' | 'insertHR' | '-' | 'insertLink' | 'insertImage' | 'insertVideo' | 'insertAudio' | 'insertFile' | 'insertTable' | 'undo' | 'redo' | 'clearFormatting' | 'selectAll' | 'html',
+    size?: 'tiny' | 'small' | 'large' | 'huge' | 'giant' | string
+}
+
+interface SensitiveField extends Field {
+    type: 'sensitive',
+    allowCopy?: boolean,
+    hiddenPlaceholder?: string,
+    hideOnTabChange?: boolean
+}
+
+interface TagListField extends Field {
+    type: 'taglist',
+    mode?: 'string' | 'array' | 'relation',
+    separator?: 'space' | 'comma',
+    customTags?: boolean,
+    options: string | string[],
+    nameFrom?: string,
+    useKey?: boolean,
+}
+
+//
+// Root
+//
 
 interface Fields {
     [field: string]: TextField | NumberField
