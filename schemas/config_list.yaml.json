@@ -106,33 +106,26 @@
                     "type": "string"
                 },
                 "search": {
-                    "anyOf": [
-                        {
-                            "properties": {
-                                "mode": {
-                                    "enum": [
-                                        "all",
-                                        "any",
-                                        "exact"
-                                    ],
-                                    "type": "string"
-                                },
-                                "prompt": {
-                                    "type": "string"
-                                },
-                                "scope": {
-                                    "type": "string"
-                                },
-                                "searchOnEnter": {
-                                    "type": "boolean"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        {
+                    "properties": {
+                        "mode": {
+                            "enum": [
+                                "all",
+                                "any",
+                                "exact"
+                            ],
                             "type": "string"
+                        },
+                        "prompt": {
+                            "type": "string"
+                        },
+                        "scope": {
+                            "type": "string"
+                        },
+                        "searchOnEnter": {
+                            "type": "boolean"
                         }
-                    ]
+                    },
+                    "type": "object"
                 }
             },
             "type": "object"

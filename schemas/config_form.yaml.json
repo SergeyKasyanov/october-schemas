@@ -1,0 +1,177 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+        "create": {
+            "properties": {
+                "customMessages": {
+                    "properties": {
+                        "flashCreate": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "form": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": true,
+                            "properties": {},
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "redirect": {
+                    "type": "string"
+                },
+                "redirectClose": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "title"
+            ],
+            "type": "object"
+        },
+        "customMessages": {
+            "properties": {
+                "flashCreate": {
+                    "type": "string"
+                },
+                "flashDelete": {
+                    "type": "string"
+                },
+                "flashUpdate": {
+                    "type": "string"
+                },
+                "notFound": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "defaultRedirect": {
+            "type": "string"
+        },
+        "form": {
+            "anyOf": [
+                {
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "modelClass": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "permissions": {
+            "properties": {
+                "modelCreate": {
+                    "type": "string"
+                },
+                "modelDelete": {
+                    "type": "string"
+                },
+                "modelPreview": {
+                    "type": "string"
+                },
+                "modelUpdate": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "preview": {
+            "properties": {
+                "customMessages": {
+                    "properties": {
+                        "notFound": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "form": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": true,
+                            "properties": {},
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "title"
+            ],
+            "type": "object"
+        },
+        "update": {
+            "properties": {
+                "customMessages": {
+                    "properties": {
+                        "flashDelete": {
+                            "type": "string"
+                        },
+                        "flashUpdate": {
+                            "type": "string"
+                        },
+                        "notFound": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "form": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": true,
+                            "properties": {},
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "redirect": {
+                    "type": "string"
+                },
+                "redirectClose": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "title"
+            ],
+            "type": "object"
+        }
+    },
+    "required": [
+        "form",
+        "modelClass",
+        "name"
+    ],
+    "type": "object"
+}
