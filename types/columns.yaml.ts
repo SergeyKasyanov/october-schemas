@@ -27,7 +27,7 @@ interface TextColumn extends Column {
 }
 
 interface NumberColumn extends Column {
-    type: 'nubmer',
+    type: 'number',
     format: string
 }
 

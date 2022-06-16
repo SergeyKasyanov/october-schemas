@@ -24,6 +24,10 @@ const configs: { [key: string]: { source: string, destination: string } } = {
         source: './types/config_form.yaml.ts',
         destination: './schemas/config_form.yaml.json',
     },
+    'config_relation.yaml': {
+        source: './types/config_relation.yaml.ts',
+        destination: './schemas/config_relation.yaml.json',
+    },
     'config_import_export.yaml': {
         source: './types/config_import_export.yaml.ts',
         destination: './schemas/config_import_export.yaml.json',

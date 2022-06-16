@@ -25,7 +25,7 @@ interface Root {
         maxDepth?: number
         dragRow?: boolean
     },
-    defaultSort?: {
+    defaultSort?: string | {
         column: string,
         direction: 'asc' | 'desc'
     },
