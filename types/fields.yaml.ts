@@ -15,6 +15,7 @@ interface Preset {
 //
 
 interface Field {
+    type: string,
     label?: string,
     value?: any,
     valueFrom?: string,
@@ -30,7 +31,6 @@ interface Field {
     comment?: string,
     commentAbove?: string,
     commentHtml?: boolean,
-    type?: string,
     context?: 'create' | 'update' | 'preview' | string | string[],
     required?: boolean,
     stretch?: boolean,
@@ -50,7 +50,7 @@ interface CustomField extends Field {
 }
 
 interface TextField extends Field {
-    type?: 'text',
+    type: 'text',
     default?: string,
     placeholder?: string
 }

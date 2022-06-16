@@ -899,6 +899,9 @@
                     ]
                 }
             },
+            "required": [
+                "type"
+            ],
             "type": "object"
         },
         "TimeColumn": {

@@ -1,5 +1,5 @@
 interface Column {
-    type?: string,
+    type: string,
 
     label?: string,
     shortLabel?: string,
@@ -22,7 +22,7 @@ interface Column {
 }
 
 interface TextColumn extends Column {
-    type?: 'text'
+    type: 'text'
 }
 
 interface NumberColumn extends Column {
