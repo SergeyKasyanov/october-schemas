@@ -1,0 +1,392 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": {
+        "properties": {
+            "customMessages": {
+                "properties": {
+                    "buttonAdd": {
+                        "type": "string"
+                    },
+                    "buttonCreate": {
+                        "type": "string"
+                    },
+                    "buttonDelete": {
+                        "type": "string"
+                    },
+                    "buttonLink": {
+                        "type": "string"
+                    },
+                    "buttonRemove": {
+                        "type": "string"
+                    },
+                    "buttonUnlink": {
+                        "type": "string"
+                    },
+                    "buttonUpdate": {
+                        "type": "string"
+                    },
+                    "confirmDelete": {
+                        "type": "string"
+                    },
+                    "confirmUnlink": {
+                        "type": "string"
+                    },
+                    "flashAdd": {
+                        "type": "string"
+                    },
+                    "flashCreate": {
+                        "type": "string"
+                    },
+                    "flashDelete": {
+                        "type": "string"
+                    },
+                    "flashLink": {
+                        "type": "string"
+                    },
+                    "flashRemove": {
+                        "type": "string"
+                    },
+                    "flashUnlink": {
+                        "type": "string"
+                    },
+                    "flashUpdate": {
+                        "type": "string"
+                    },
+                    "titleAddForm": {
+                        "type": "string"
+                    },
+                    "titleCreateForm": {
+                        "type": "string"
+                    },
+                    "titleLinkForm": {
+                        "type": "string"
+                    },
+                    "titlePivotForm": {
+                        "type": "string"
+                    },
+                    "titlePreviewForm": {
+                        "type": "string"
+                    },
+                    "titleUpdateForm": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "deferredBinding": {
+                "type": "boolean"
+            },
+            "emptyMessage": {
+                "type": "string"
+            },
+            "label": {
+                "type": "string"
+            },
+            "manage": {
+                "$ref": "#/definitions/ManageMode"
+            },
+            "pivot": {
+                "properties": {
+                    "form": {
+                        "anyOf": [
+                            {
+                                "properties": {
+                                    "fields": {
+                                        "anyOf": [
+                                            {
+                                                "additionalProperties": true,
+                                                "properties": {},
+                                                "type": "object"
+                                            },
+                                            {
+                                                "type": "string"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "fields"
+                                ],
+                                "type": "object"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "form"
+                ],
+                "type": "object"
+            },
+            "readOnly": {
+                "type": "boolean"
+            },
+            "view": {
+                "$ref": "#/definitions/ViewMode"
+            }
+        },
+        "required": [
+            "label"
+        ],
+        "type": "object"
+    },
+    "definitions": {
+        "ManageMode": {
+            "properties": {
+                "conditions": {
+                    "type": "string"
+                },
+                "context": {
+                    "type": "string"
+                },
+                "defaultSort": {
+                    "anyOf": [
+                        {
+                            "properties": {
+                                "column": {
+                                    "type": "string"
+                                },
+                                "direction": {
+                                    "enum": [
+                                        "asc",
+                                        "desc"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "column",
+                                "direction"
+                            ],
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "filter": {
+                    "type": "string"
+                },
+                "form": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": true,
+                            "properties": {},
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "list": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": true,
+                            "properties": {},
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "noRecordsMessage": {
+                    "type": "string"
+                },
+                "recordsPerPage": {
+                    "type": "number"
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "searchMode": {
+                    "enum": [
+                        "all",
+                        "any",
+                        "exact"
+                    ],
+                    "type": "string"
+                },
+                "searchScope": {
+                    "type": "string"
+                },
+                "showFlash": {
+                    "type": "boolean"
+                },
+                "showSearch": {
+                    "type": "boolean"
+                },
+                "showSorting": {
+                    "type": "boolean"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ViewMode": {
+            "properties": {
+                "conditions": {
+                    "type": "string"
+                },
+                "customViewPath": {
+                    "type": "string"
+                },
+                "defaultSort": {
+                    "anyOf": [
+                        {
+                            "properties": {
+                                "column": {
+                                    "type": "string"
+                                },
+                                "direction": {
+                                    "enum": [
+                                        "asc",
+                                        "desc"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "column",
+                                "direction"
+                            ],
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "filter": {
+                    "type": "string"
+                },
+                "form": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": true,
+                            "properties": {},
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "list": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": true,
+                            "properties": {},
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "noRecordsMessage": {
+                    "type": "string"
+                },
+                "recordOnClick": {
+                    "type": "string"
+                },
+                "recordUrl": {
+                    "type": "string"
+                },
+                "recordsPerPage": {
+                    "type": "number"
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "searchMode": {
+                    "enum": [
+                        "all",
+                        "any",
+                        "exact"
+                    ],
+                    "type": "string"
+                },
+                "searchScope": {
+                    "type": "string"
+                },
+                "showCheckboxes": {
+                    "type": "boolean"
+                },
+                "showFlash": {
+                    "type": "boolean"
+                },
+                "showSearch": {
+                    "type": "boolean"
+                },
+                "showSorting": {
+                    "type": "boolean"
+                },
+                "structure": {
+                    "properties": {
+                        "dragRow": {
+                            "type": "boolean"
+                        },
+                        "maxDepth": {
+                            "type": "number"
+                        },
+                        "showReorder": {
+                            "type": "boolean"
+                        },
+                        "showTree": {
+                            "type": "boolean"
+                        },
+                        "treeExpanded": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "showReorder",
+                        "showTree",
+                        "treeExpanded"
+                    ],
+                    "type": "object"
+                },
+                "toolbarButtons": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "enum": [
+                                    "add",
+                                    "create",
+                                    "delete",
+                                    "link",
+                                    "remove",
+                                    "unlink",
+                                    "update"
+                                ],
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "enum": [
+                                false
+                            ],
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "toolbarPartial": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}

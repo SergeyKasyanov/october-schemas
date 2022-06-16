@@ -23,7 +23,7 @@ interface ViewMode extends Mode {
     customViewPath?: string,
     recordOnClick?: string,
     toolbarPartial?: string,
-    toolbarButtons?: string | ('update' | 'delete' | 'add' | 'remove' | 'link' | 'unlink')[] | false,
+    toolbarButtons?: string | ('create' | 'update' | 'delete' | 'add' | 'remove' | 'link' | 'unlink')[] | false,
     structure?: {
         showTree: boolean,
         treeExpanded: boolean,

@@ -6,23 +6,30 @@
             "type": "string"
         },
         "defaultSort": {
-            "properties": {
-                "column": {
-                    "type": "string"
-                },
-                "direction": {
-                    "enum": [
-                        "asc",
-                        "desc"
+            "anyOf": [
+                {
+                    "properties": {
+                        "column": {
+                            "type": "string"
+                        },
+                        "direction": {
+                            "enum": [
+                                "asc",
+                                "desc"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "column",
+                        "direction"
                     ],
+                    "type": "object"
+                },
+                {
                     "type": "string"
                 }
-            },
-            "required": [
-                "column",
-                "direction"
-            ],
-            "type": "object"
+            ]
         },
         "deleteMessage": {
             "type": "string"

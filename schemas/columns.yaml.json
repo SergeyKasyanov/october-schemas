@@ -554,7 +554,7 @@
                 },
                 "type": {
                     "enum": [
-                        "nubmer"
+                        "number"
                     ],
                     "type": "string"
                 },
