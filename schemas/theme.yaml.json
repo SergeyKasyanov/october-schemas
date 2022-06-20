@@ -83,15 +83,16 @@
                 "options": {
                     "anyOf": [
                         {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        },
-                        {
                             "items": {
                                 "type": "string"
                             },
                             "type": "array"
+                        },
+                        {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
                         },
                         {
                             "type": "string"
@@ -387,15 +388,16 @@
                 "options": {
                     "anyOf": [
                         {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        },
-                        {
                             "items": {
                                 "type": "string"
                             },
                             "type": "array"
+                        },
+                        {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
                         },
                         {
                             "type": "string"
@@ -1459,15 +1461,16 @@
                 "options": {
                     "anyOf": [
                         {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        },
-                        {
                             "items": {
                                 "type": "string"
                             },
                             "type": "array"
+                        },
+                        {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
                         },
                         {
                             "type": "string"
@@ -3210,15 +3213,16 @@
                 "options": {
                     "anyOf": [
                         {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        },
-                        {
                             "items": {
                                 "type": "string"
                             },
                             "type": "array"
+                        },
+                        {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
                         },
                         {
                             "type": "string"
@@ -4696,6 +4700,12 @@
                             "type": "array"
                         },
                         {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        {
                             "type": "string"
                         }
                     ]
@@ -4769,7 +4779,6 @@
                 }
             },
             "required": [
-                "options",
                 "type"
             ],
             "type": "object"
@@ -5073,9 +5082,21 @@
         "Trigger": {
             "properties": {
                 "action": {
+                    "enum": [
+                        "disable",
+                        "empty",
+                        "enable",
+                        "hide",
+                        "show"
+                    ],
                     "type": "string"
                 },
                 "condition": {
+                    "enum": [
+                        "checked",
+                        "unchecked",
+                        "value[]"
+                    ],
                     "type": "string"
                 },
                 "field": {

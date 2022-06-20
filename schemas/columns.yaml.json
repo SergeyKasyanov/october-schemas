@@ -706,6 +706,12 @@
                 "options": {
                     "anyOf": [
                         {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
                             "additionalProperties": {
                                 "type": "string"
                             },

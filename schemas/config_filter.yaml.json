@@ -36,6 +36,28 @@
             ],
             "type": "object"
         },
+        "CustomScope": {
+            "additionalProperties": {},
+            "properties": {
+                "dependsOn": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "modelScope": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "label",
+                "type"
+            ],
+            "type": "object"
+        },
         "DateScope": {
             "properties": {
                 "conditions": {
@@ -112,15 +134,16 @@
                 "options": {
                     "anyOf": [
                         {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        },
-                        {
                             "items": {
                                 "type": "string"
                             },
                             "type": "array"
+                        },
+                        {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
                         },
                         {
                             "type": "string"
@@ -169,15 +192,16 @@
                 "options": {
                     "anyOf": [
                         {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
-                        },
-                        {
                             "items": {
                                 "type": "string"
                             },
                             "type": "array"
+                        },
+                        {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
                         },
                         {
                             "type": "string"
@@ -339,6 +363,9 @@
                     },
                     {
                         "$ref": "#/definitions/DateScope"
+                    },
+                    {
+                        "$ref": "#/definitions/CustomScope"
                     }
                 ]
             },

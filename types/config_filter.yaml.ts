@@ -35,7 +35,7 @@ interface NumberScope extends Scope {
 
 interface DropdownScope extends Scope {
     type: 'dropdown',
-    options?: string | string[] | object
+    options?: string | string[] | { [key: string]: string },
     conditions?: string
 }
 
@@ -44,7 +44,7 @@ interface GroupScope extends Scope {
     nameFrom?: string,
     valueFrom?: string,
     modelClass?: string,
-    options?: string | string[] | object,
+    options?: string | string[] | { [key: string]: string },
     conditions?: string,
     default?: string[]
 }
@@ -62,8 +62,12 @@ interface DateScope extends Scope {
     }
 }
 
+interface CustomScope extends Scope {
+    [property: string]: any;
+}
+
 export interface ConfigFilterRoot {
     scopes: {
-        [scope: string]: CheckboxScope | SwitchScope | TextScope | NumberScope | DropdownScope | GroupScope | DateScope
+        [scope: string]: CheckboxScope | SwitchScope | TextScope | NumberScope | DropdownScope | GroupScope | DateScope | CustomScope
     }
 }

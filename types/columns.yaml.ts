@@ -80,7 +80,7 @@ interface TimeTenseColumn extends Column {
 
 interface SelectableColumn extends Column {
     type: 'selectable',
-    options?: { [key: string]: string } | string
+    options?: string | string[] | { [key: string]: string }
 }
 
 interface PartialColumn extends Column {

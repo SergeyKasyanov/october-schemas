@@ -1,5 +1,5 @@
 interface Trigger {
-    action: 'show' | 'hide' | 'enable' | 'disable' | 'empty' | string,
+    action: 'show' | 'hide' | 'enable' | 'disable' | 'empty',
     field: string,
     condition: 'checked' | 'unchecked' | 'value[]' | string,
 }
@@ -79,20 +79,20 @@ interface TextareaField extends Field {
 
 interface DropdownField extends Field {
     type: 'dropdown',
-    options?: string | string[] | object,
+    options?: string | string[] | { [key: string]: string },
     emptyOption?: string,
     showSearch?: boolean
 }
 
 interface RadioListField extends Field {
     type: 'radio',
-    options?: string | string[] | object,
+    options?: string | string[] | { [key: string]: string },
     cssClass?: 'inline-options' | string
 }
 
 interface BalloonSelectorField extends Field {
     type: 'balloon-selector',
-    options?: string | string[] | object,
+    options?: string | string[] | { [key: string]: string },
 }
 
 interface CheckboxField extends Field {
@@ -102,7 +102,7 @@ interface CheckboxField extends Field {
 
 interface CheckboxListField extends Field {
     type: 'checkboxlist',
-    options?: string | string[] | object,
+    options?: string | string[] | { [key: string]: string },
     quickselect?: boolean,
     cssClass?: 'inline-options' | string
 }
@@ -310,7 +310,7 @@ interface TagListField extends Field {
     mode?: 'string' | 'array' | 'relation',
     separator?: 'space' | 'comma',
     customTags?: boolean,
-    options: string | string[],
+    options?: string | string[] | { [key: string]: string },
     nameFrom?: string,
     useKey?: boolean,
 }
