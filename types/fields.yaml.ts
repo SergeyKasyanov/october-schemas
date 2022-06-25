@@ -26,7 +26,7 @@ interface Field {
     disabled?: boolean,
     hidden?: boolean,
     tab?: string,
-    span?: 'auto' | 'left' | 'right' | 'full' | string,
+    span?: 'auto' | 'left' | 'right' | 'full' | 'adaptive',
     spanClass?: string,
     comment?: string,
     commentAbove?: string,

@@ -264,6 +264,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -408,6 +415,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -572,6 +586,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -723,6 +744,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -970,6 +998,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -1257,6 +1292,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -1532,6 +1574,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -1799,6 +1848,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -2065,6 +2121,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -2207,6 +2270,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -2524,6 +2594,13 @@
                     "type": "string"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -2710,6 +2787,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -3079,6 +3163,13 @@
                     "type": "string"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -3237,6 +3328,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -3392,6 +3490,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -3634,6 +3739,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -3880,6 +3992,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -4022,6 +4141,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -4208,6 +4334,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -4397,6 +4530,13 @@
                     "type": "string"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -4561,6 +4701,13 @@
                     "type": "string"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -4775,6 +4922,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -4932,6 +5086,13 @@
                     "type": "string"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -5077,6 +5238,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -5219,6 +5387,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -5478,6 +5653,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -5812,6 +5994,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -5994,6 +6183,13 @@
                     "type": "string"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -6230,6 +6426,13 @@
                     "type": "boolean"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -6382,6 +6585,13 @@
                     "type": "string"
                 },
                 "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right"
+                    ],
                     "type": "string"
                 },
                 "spanClass": {
@@ -6695,11 +6905,6 @@
                     "type": "string"
                 },
                 "condition": {
-                    "enum": [
-                        "checked",
-                        "unchecked",
-                        "value[]"
-                    ],
                     "type": "string"
                 },
                 "field": {
