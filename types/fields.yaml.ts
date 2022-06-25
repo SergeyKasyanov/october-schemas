@@ -264,7 +264,7 @@ interface RelationField extends Field {
     type: 'relation',
     nameFrom?: string,
     select?: string,
-    order?: 'asc' | 'desc' | string,
+    order?: 'asc' | 'desc',
     emptyOption?: string,
     scope?: string,
     useController?: boolean,
@@ -279,7 +279,7 @@ interface RepeaterField extends Field {
     titleFrom?: string,
     minItems?: number,
     maxItems?: number,
-    groups: string | {
+    groups?: string | {
         [group: string]: {
             name: string,
             description?: string,
@@ -326,12 +326,18 @@ interface Fields {
     | FileUploadField | MarkdownEditorField | MediaFinderField | NestedFormField | RecordFinderField | RelationField | RepeaterField | RichEditorField | SensitiveField | TagListField
 }
 
+interface FormTabs {
+    stretch?: boolean,
+    defaultTab?: string,
+    cssClass?: string,
+    lazy?: string[],
+    paneCssClass?: { [tabNumber: number]: string },
+    icons?: { [tabName: number]: string },
+    fields: Fields
+}
+
 export interface FieldsRoot {
     fields?: Fields,
-    tabs?: {
-        fields: Fields
-    },
-    secondaryTabs?: {
-        fields: Fields
-    }
+    tabs?: FormTabs,
+    secondaryTabs?: FormTabs
 }

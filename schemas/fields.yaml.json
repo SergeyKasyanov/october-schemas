@@ -1865,26 +1865,10 @@
                     "$ref": "#/definitions/Fields"
                 },
                 "secondaryTabs": {
-                    "properties": {
-                        "fields": {
-                            "$ref": "#/definitions/Fields"
-                        }
-                    },
-                    "required": [
-                        "fields"
-                    ],
-                    "type": "object"
+                    "$ref": "#/definitions/FormTabs"
                 },
                 "tabs": {
-                    "properties": {
-                        "fields": {
-                            "$ref": "#/definitions/Fields"
-                        }
-                    },
-                    "required": [
-                        "fields"
-                    ],
-                    "type": "object"
+                    "$ref": "#/definitions/FormTabs"
                 }
             },
             "type": "object"
@@ -2108,6 +2092,50 @@
             },
             "required": [
                 "type"
+            ],
+            "type": "object"
+        },
+        "FormTabs": {
+            "properties": {
+                "cssClass": {
+                    "type": "string"
+                },
+                "defaultTab": {
+                    "type": "string"
+                },
+                "fields": {
+                    "$ref": "#/definitions/Fields"
+                },
+                "icons": {
+                    "additionalProperties": false,
+                    "patternProperties": {
+                        "^[0-9]+$": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "lazy": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "paneCssClass": {
+                    "additionalProperties": false,
+                    "patternProperties": {
+                        "^[0-9]+$": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "stretch": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "fields"
             ],
             "type": "object"
         },
@@ -3715,6 +3743,10 @@
                     "type": "string"
                 },
                 "order": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
                     "type": "string"
                 },
                 "permissions": {
@@ -4014,7 +4046,6 @@
             },
             "required": [
                 "form",
-                "groups",
                 "type"
             ],
             "type": "object"
