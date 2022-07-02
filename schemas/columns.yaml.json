@@ -172,9 +172,6 @@
                     ]
                 }
             },
-            "required": [
-                "type"
-            ],
             "type": "object"
         },
         "DateColumn": {

@@ -94,9 +94,7 @@
                                     "fields": {
                                         "anyOf": [
                                             {
-                                                "additionalProperties": true,
-                                                "properties": {},
-                                                "type": "object"
+                                                "$ref": "#/definitions/FieldsRoot"
                                             },
                                             {
                                                 "type": "string"
@@ -1174,9 +1172,6 @@
                     ]
                 }
             },
-            "required": [
-                "type"
-            ],
             "type": "object"
         },
         "CustomField": {
@@ -1321,9 +1316,6 @@
                     "type": "string"
                 }
             },
-            "required": [
-                "type"
-            ],
             "type": "object"
         },
         "DataTableField": {
@@ -4490,9 +4482,7 @@
                 "list": {
                     "anyOf": [
                         {
-                            "additionalProperties": true,
-                            "properties": {},
-                            "type": "object"
+                            "$ref": "#/definitions/ColumnsRoot"
                         },
                         {
                             "type": "string"

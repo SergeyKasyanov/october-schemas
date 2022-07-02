@@ -3,7 +3,7 @@ import { FieldsRoot } from "./fields.yaml"
 export interface ConfigFormRoot {
     // required
     name: string,
-    form: string | object,
+    form: string | FieldsRoot,
     modelClass: string
 
     // pages

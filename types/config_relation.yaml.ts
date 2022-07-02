@@ -48,7 +48,7 @@ export interface ConfigRelationRoot {
         manage?: ManageMode,
         pivot?: {
             form: string | {
-                fields: string | object
+                fields: string | FieldsRoot
             }
         },
         emptyMessage?: string

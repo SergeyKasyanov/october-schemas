@@ -1,3 +1,5 @@
+import { ColumnsRoot } from "./columns.yaml"
+
 interface Trigger {
     action: 'show' | 'hide' | 'enable' | 'disable' | 'empty',
     field: string,
@@ -15,7 +17,7 @@ interface Preset {
 //
 
 interface Field {
-    type: string,
+    type?: string,
     label?: string,
     value?: any,
     valueFrom?: string,
@@ -250,7 +252,7 @@ interface RecordFinderField extends Field {
     descriptionFrom?: string,
     title?: string,
     prompt?: string,
-    list: string | object,
+    list: string | ColumnsRoot,
     recordsPerPage?: number,
     conditions?: string,
     scope?: string,

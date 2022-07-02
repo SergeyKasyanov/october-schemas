@@ -1,5 +1,5 @@
 interface Column {
-    type: string,
+    type?: string,
 
     label?: string,
     shortLabel?: string,
@@ -93,7 +93,6 @@ interface ColorPickerColumn extends Column {
 }
 
 interface CustomColumn extends Column {
-    type: string,
     [property: string]: any,
 }
 
