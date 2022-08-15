@@ -138,7 +138,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -289,7 +290,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -460,7 +462,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -618,7 +621,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -872,7 +876,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -1163,7 +1168,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -1442,7 +1448,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -1716,7 +1723,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -1989,7 +1997,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -2138,7 +2147,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -2446,7 +2456,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -2683,7 +2694,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -2967,7 +2979,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -3132,7 +3145,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -3294,7 +3308,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -3543,7 +3558,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -3796,7 +3812,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -3945,7 +3962,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -4138,7 +4156,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -4332,7 +4351,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -4507,7 +4527,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -4728,7 +4749,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -4891,7 +4913,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -5043,7 +5066,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -5192,7 +5216,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -5458,7 +5483,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -5799,7 +5825,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -5988,7 +6015,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -6231,7 +6259,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },
@@ -6390,7 +6419,8 @@
                         "auto",
                         "full",
                         "left",
-                        "right"
+                        "right",
+                        "row"
                     ],
                     "type": "string"
                 },

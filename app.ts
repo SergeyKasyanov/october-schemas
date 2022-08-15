@@ -53,6 +53,11 @@ const configs: { [key: string]: { source: string, destination: string, root:stri
         source: './types/version.yaml.ts',
         destination: './schemas/version.yaml.json',
         root: 'VersionRoot'
+    },
+    'blueprint.yaml': {
+        source: './types/blueprint.ts',
+        destination: './schemas/blueprint.yaml.json',
+        root: 'Blueprint'
     }
 };
 

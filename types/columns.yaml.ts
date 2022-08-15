@@ -96,10 +96,13 @@ interface CustomColumn extends Column {
     [property: string]: any,
 }
 
+
+export type AnyColumn = TextColumn | NumberColumn | ImageColumn | SwitchColumn | SummaryColumn
+    | DateTimeColumn | DateColumn | TimeColumn | TimeSinceColumn | TimeTenseColumn
+    | SelectableColumn | PartialColumn | ColorPickerColumn | CustomColumn;
+
 export interface ColumnsRoot {
     columns: {
-        [column: string]: TextColumn | NumberColumn | ImageColumn | SwitchColumn | SummaryColumn
-        | DateTimeColumn | DateColumn | TimeColumn | TimeSinceColumn | TimeTenseColumn
-        | SelectableColumn | PartialColumn | ColorPickerColumn | CustomColumn
+        [column: string]: AnyColumn
     }
 }

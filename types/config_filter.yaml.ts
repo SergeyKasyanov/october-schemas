@@ -66,8 +66,10 @@ interface CustomScope extends Scope {
     [property: string]: any;
 }
 
+export type AnyScope = CheckboxScope | SwitchScope | TextScope | NumberScope | DropdownScope | GroupScope | DateScope | CustomScope
+
 export interface ConfigFilterRoot {
     scopes: {
-        [scope: string]: CheckboxScope | SwitchScope | TextScope | NumberScope | DropdownScope | GroupScope | DateScope | CustomScope
+        [scope: string]: AnyScope
     }
 }

@@ -28,7 +28,7 @@ interface Field {
     disabled?: boolean,
     hidden?: boolean,
     tab?: string,
-    span?: 'auto' | 'left' | 'right' | 'full' | 'adaptive',
+    span?: 'auto' | 'left' | 'right' | 'full' | 'adaptive' | 'row',
     spanClass?: string,
     comment?: string,
     commentAbove?: string,
@@ -321,14 +321,15 @@ interface TagListField extends Field {
 // FieldsRoot
 //
 
-interface Fields {
-    [field: string]:
-    CustomField | TextField | NumberField | PasswordField | EmailField | TextareaField | DropdownField | RadioListField | BalloonSelectorField
+export type AnyField = CustomField | TextField | NumberField | PasswordField | EmailField | TextareaField | DropdownField | RadioListField | BalloonSelectorField
     | CheckboxField | CheckboxListField | SwitchField | SectionField | HintField | RulerField | PartialField | CodeEditorField | ColorPickerField | DataTableField | DatePickerField
-    | FileUploadField | MarkdownEditorField | MediaFinderField | NestedFormField | RecordFinderField | RelationField | RepeaterField | RichEditorField | SensitiveField | TagListField
+    | FileUploadField | MarkdownEditorField | MediaFinderField | NestedFormField | RecordFinderField | RelationField | RepeaterField | RichEditorField | SensitiveField | TagListField;
+
+export interface Fields {
+    [field: string]: AnyField
 }
 
-interface FormTabs {
+export interface FormTabs {
     stretch?: boolean,
     defaultTab?: string,
     cssClass?: string,

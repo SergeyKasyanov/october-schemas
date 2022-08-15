@@ -536,6 +536,31 @@
             ],
             "type": "object"
         },
+        "ListStructure": {
+            "properties": {
+                "dragRow": {
+                    "type": "boolean"
+                },
+                "maxDepth": {
+                    "type": "number"
+                },
+                "showReorder": {
+                    "type": "boolean"
+                },
+                "showTree": {
+                    "type": "boolean"
+                },
+                "treeExpanded": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "showReorder",
+                "showTree",
+                "treeExpanded"
+            ],
+            "type": "object"
+        },
         "NumberColumn": {
             "properties": {
                 "align": {
@@ -1456,29 +1481,7 @@
             "type": "boolean"
         },
         "structure": {
-            "properties": {
-                "dragRow": {
-                    "type": "boolean"
-                },
-                "maxDepth": {
-                    "type": "number"
-                },
-                "showReorder": {
-                    "type": "boolean"
-                },
-                "showTree": {
-                    "type": "boolean"
-                },
-                "treeExpanded": {
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "showReorder",
-                "showTree",
-                "treeExpanded"
-            ],
-            "type": "object"
+            "$ref": "#/definitions/ListStructure"
         },
         "title": {
             "type": "string"

@@ -1,5 +1,13 @@
 import { ColumnsRoot } from "./columns.yaml"
 
+export interface ListStructure {
+    showTree: boolean
+    treeExpanded: boolean
+    showReorder: boolean
+    maxDepth?: number
+    dragRow?: boolean
+}
+
 export interface ConfigListRoot {
     // required
     title: string,
@@ -20,13 +28,7 @@ export interface ConfigListRoot {
     showSetup?: boolean,
     customViewPath?: string,
 
-    structure?: {
-        showTree: boolean,
-        treeExpanded: boolean,
-        showReorder: boolean
-        maxDepth?: number
-        dragRow?: boolean
-    },
+    structure?: ListStructure,
     defaultSort?: string | {
         column: string,
         direction: 'asc' | 'desc'
