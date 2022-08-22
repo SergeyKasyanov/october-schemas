@@ -41,42 +41,44 @@ interface ManageMode extends Mode {
     context?: 'create' | 'update' | string
 }
 
-export interface ConfigRelationRoot {
-    [relation: string]: {
-        label: string,
-        view?: ViewMode,
-        manage?: ManageMode,
-        pivot?: {
-            form: string | {
-                fields: string | FieldsRoot
-            }
-        },
-        emptyMessage?: string
-        readOnly?: boolean,
-        deferredBinding?: boolean
-        customMessages?: {
-            buttonCreate?: string,
-            buttonUpdate?: string,
-            buttonAdd?: string,
-            buttonLink?: string,
-            buttonDelete?: string,
-            buttonRemove?: string,
-            buttonUnlink?: string,
-            confirmDelete?: string,
-            confirmUnlink?: string,
-            titlePreviewForm?: string,
-            titleCreateForm?: string,
-            titleUpdateForm?: string,
-            titleLinkForm?: string,
-            titleAddForm?: string,
-            titlePivotForm?: string,
-            flashCreate?: string,
-            flashUpdate?: string,
-            flashDelete?: string,
-            flashAdd?: string,
-            flashLink?: string,
-            flashRemove?: string,
-            flashUnlink?: string,
+interface RelationDefinition {
+    label: string
+    view?: ViewMode
+    manage?: ManageMode
+    pivot?: {
+        form: string | {
+            fields: string | FieldsRoot
         }
     }
+    emptyMessage?: string
+    readOnly?: boolean
+    deferredBinding?: boolean
+    customMessages?: {
+        buttonCreate?: string
+        buttonUpdate?: string
+        buttonAdd?: string
+        buttonLink?: string
+        buttonDelete?: string
+        buttonRemove?: string
+        buttonUnlink?: string
+        confirmDelete?: string
+        confirmUnlink?: string
+        titlePreviewForm?: string
+        titleCreateForm?: string
+        titleUpdateForm?: string
+        titleLinkForm?: string
+        titleAddForm?: string
+        titlePivotForm?: string
+        flashCreate?: string
+        flashUpdate?: string
+        flashDelete?: string
+        flashAdd?: string
+        flashLink?: string
+        flashRemove?: string
+        flashUnlink?: string
+    }
+}
+
+export interface ConfigRelationRoot {
+    [relation: string]: RelationDefinition
 }

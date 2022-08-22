@@ -1,134 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": {
-        "properties": {
-            "customMessages": {
-                "properties": {
-                    "buttonAdd": {
-                        "type": "string"
-                    },
-                    "buttonCreate": {
-                        "type": "string"
-                    },
-                    "buttonDelete": {
-                        "type": "string"
-                    },
-                    "buttonLink": {
-                        "type": "string"
-                    },
-                    "buttonRemove": {
-                        "type": "string"
-                    },
-                    "buttonUnlink": {
-                        "type": "string"
-                    },
-                    "buttonUpdate": {
-                        "type": "string"
-                    },
-                    "confirmDelete": {
-                        "type": "string"
-                    },
-                    "confirmUnlink": {
-                        "type": "string"
-                    },
-                    "flashAdd": {
-                        "type": "string"
-                    },
-                    "flashCreate": {
-                        "type": "string"
-                    },
-                    "flashDelete": {
-                        "type": "string"
-                    },
-                    "flashLink": {
-                        "type": "string"
-                    },
-                    "flashRemove": {
-                        "type": "string"
-                    },
-                    "flashUnlink": {
-                        "type": "string"
-                    },
-                    "flashUpdate": {
-                        "type": "string"
-                    },
-                    "titleAddForm": {
-                        "type": "string"
-                    },
-                    "titleCreateForm": {
-                        "type": "string"
-                    },
-                    "titleLinkForm": {
-                        "type": "string"
-                    },
-                    "titlePivotForm": {
-                        "type": "string"
-                    },
-                    "titlePreviewForm": {
-                        "type": "string"
-                    },
-                    "titleUpdateForm": {
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "deferredBinding": {
-                "type": "boolean"
-            },
-            "emptyMessage": {
-                "type": "string"
-            },
-            "label": {
-                "type": "string"
-            },
-            "manage": {
-                "$ref": "#/definitions/ManageMode"
-            },
-            "pivot": {
-                "properties": {
-                    "form": {
-                        "anyOf": [
-                            {
-                                "properties": {
-                                    "fields": {
-                                        "anyOf": [
-                                            {
-                                                "$ref": "#/definitions/FieldsRoot"
-                                            },
-                                            {
-                                                "type": "string"
-                                            }
-                                        ]
-                                    }
-                                },
-                                "required": [
-                                    "fields"
-                                ],
-                                "type": "object"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ]
-                    }
-                },
-                "required": [
-                    "form"
-                ],
-                "type": "object"
-            },
-            "readOnly": {
-                "type": "boolean"
-            },
-            "view": {
-                "$ref": "#/definitions/ViewMode"
-            }
-        },
-        "required": [
-            "label"
-        ],
-        "type": "object"
+        "$ref": "#/definitions/RelationDefinition"
     },
     "definitions": {
         "BalloonSelectorField": {
@@ -4609,6 +4482,136 @@
             "required": [
                 "list",
                 "type"
+            ],
+            "type": "object"
+        },
+        "RelationDefinition": {
+            "properties": {
+                "customMessages": {
+                    "properties": {
+                        "buttonAdd": {
+                            "type": "string"
+                        },
+                        "buttonCreate": {
+                            "type": "string"
+                        },
+                        "buttonDelete": {
+                            "type": "string"
+                        },
+                        "buttonLink": {
+                            "type": "string"
+                        },
+                        "buttonRemove": {
+                            "type": "string"
+                        },
+                        "buttonUnlink": {
+                            "type": "string"
+                        },
+                        "buttonUpdate": {
+                            "type": "string"
+                        },
+                        "confirmDelete": {
+                            "type": "string"
+                        },
+                        "confirmUnlink": {
+                            "type": "string"
+                        },
+                        "flashAdd": {
+                            "type": "string"
+                        },
+                        "flashCreate": {
+                            "type": "string"
+                        },
+                        "flashDelete": {
+                            "type": "string"
+                        },
+                        "flashLink": {
+                            "type": "string"
+                        },
+                        "flashRemove": {
+                            "type": "string"
+                        },
+                        "flashUnlink": {
+                            "type": "string"
+                        },
+                        "flashUpdate": {
+                            "type": "string"
+                        },
+                        "titleAddForm": {
+                            "type": "string"
+                        },
+                        "titleCreateForm": {
+                            "type": "string"
+                        },
+                        "titleLinkForm": {
+                            "type": "string"
+                        },
+                        "titlePivotForm": {
+                            "type": "string"
+                        },
+                        "titlePreviewForm": {
+                            "type": "string"
+                        },
+                        "titleUpdateForm": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "deferredBinding": {
+                    "type": "boolean"
+                },
+                "emptyMessage": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "manage": {
+                    "$ref": "#/definitions/ManageMode"
+                },
+                "pivot": {
+                    "properties": {
+                        "form": {
+                            "anyOf": [
+                                {
+                                    "properties": {
+                                        "fields": {
+                                            "anyOf": [
+                                                {
+                                                    "$ref": "#/definitions/FieldsRoot"
+                                                },
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "fields"
+                                    ],
+                                    "type": "object"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    },
+                    "required": [
+                        "form"
+                    ],
+                    "type": "object"
+                },
+                "readOnly": {
+                    "type": "boolean"
+                },
+                "view": {
+                    "$ref": "#/definitions/ViewMode"
+                }
+            },
+            "required": [
+                "label"
             ],
             "type": "object"
         },
