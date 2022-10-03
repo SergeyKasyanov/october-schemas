@@ -6,7 +6,7 @@
         {
             "label": "Generate schemas",
             "type": "shell",
-            "command": "ts-node app.ts",
+            "command": "node ./node_modules/.bin/ts-node app.ts",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
