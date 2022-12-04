@@ -1,7 +1,7 @@
 import { ColumnsRoot } from "./columns.yaml"
 
 interface Trigger {
-    action: 'show' | 'hide' | 'enable' | 'disable' | 'empty',
+    action: 'show' | 'hide' | 'enable' | 'disable' | 'empty' | 'fill',
     field: string,
     condition: 'checked' | 'unchecked' | 'value[]' | string,
 }
@@ -270,6 +270,7 @@ interface RelationField extends Field {
     emptyOption?: string,
     scope?: string,
     useController?: boolean,
+    showSearch?: boolean
 }
 
 interface RepeaterField extends Field {
@@ -334,8 +335,8 @@ export interface FormTabs {
     defaultTab?: string,
     cssClass?: string,
     lazy?: string[],
-    paneCssClass?: { [tabNumber: number]: string },
-    icons?: { [tabName: number]: string },
+    paneCssClass?: { [tabName: string]: string },
+    icons?: { [tabName: string]: string },
     fields: Fields
 }
 

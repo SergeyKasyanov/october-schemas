@@ -35,6 +35,7 @@ interface NumberScope extends Scope {
 
 interface DropdownScope extends Scope {
     type: 'dropdown',
+    modelClass?: string,
     options?: string | string[] | { [key: string]: string },
     conditions?: string
 }
