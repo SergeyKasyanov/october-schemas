@@ -1,4 +1,5 @@
 import { ColumnsRoot } from "./columns.yaml"
+import { ConfigFilterRoot } from "./config_filter.yaml"
 import { FieldsRoot } from "./fields.yaml"
 
 interface Mode {
@@ -17,7 +18,7 @@ interface Mode {
     scope?: string,
     searchMode?: 'all' | 'any' | 'exact',
     searchScope?: string,
-    filter?: string,
+    filter?: string | ConfigFilterRoot,
 }
 
 interface ViewMode extends Mode {
