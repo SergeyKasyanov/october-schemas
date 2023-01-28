@@ -92,14 +92,18 @@ interface ColorPickerColumn extends Column {
     type: 'colorpicker'
 }
 
+interface LinkageColumn extends Column {
+    type: 'linkage'
+    attributes?: { [key: string]: string }
+}
+
 interface CustomColumn extends Column {
     [property: string]: any,
 }
 
-
 export type AnyColumn = TextColumn | NumberColumn | ImageColumn | SwitchColumn | SummaryColumn
     | DateTimeColumn | DateColumn | TimeColumn | TimeSinceColumn | TimeTenseColumn
-    | SelectableColumn | PartialColumn | ColorPickerColumn | CustomColumn;
+    | SelectableColumn | PartialColumn | ColorPickerColumn | LinkageColumn | CustomColumn;
 
 export interface ColumnsRoot {
     columns: {

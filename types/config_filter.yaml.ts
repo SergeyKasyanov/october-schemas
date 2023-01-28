@@ -3,6 +3,7 @@ interface Scope {
     type: string,
     modelScope?: string,
     dependsOn?: string
+    scope?: string
 }
 
 interface CheckboxScope extends Scope {

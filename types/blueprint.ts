@@ -8,11 +8,20 @@ interface MixinField {
     source: string,
 }
 
+interface EntriesField {
+    type: 'entries'
+    source: string,
+    maxItems?: number,
+    displayMode?: 'relation' | 'recordfinder',
+    conditions?: string,
+    scope?: string
+}
+
 type TailorField = (AnyField & {
     validation?: string | string[],
     column?: AnyColumn,
     scope?: AnyScope
-}) | MixinField;
+}) | MixinField | EntriesField;
 
 interface Navigation {
     label?: string,

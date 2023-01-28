@@ -1,9 +1,10 @@
 import { ColumnsRoot } from "./columns.yaml"
 
 export interface ListStructure {
-    showTree: boolean
-    treeExpanded: boolean
-    showReorder: boolean
+    showTree?: boolean
+    treeExpanded?: boolean
+    showReorder?: boolean
+    showSorting?: boolean,
     maxDepth?: number
     dragRow?: boolean
 }
@@ -27,6 +28,7 @@ export interface ConfigListRoot {
     showCheckboxes?: boolean,
     showSetup?: boolean,
     customViewPath?: string,
+    customPageName?: string,
 
     structure?: ListStructure,
     defaultSort?: string | {
