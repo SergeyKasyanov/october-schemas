@@ -3,7 +3,7 @@ import stringify from 'safe-stable-stringify';
 import * as TJS from "typescript-json-schema";
 import * as fs from 'fs';
 
-const configs: { [key: string]: { source: string, destination: string, root:string } } = {
+const configs: { [key: string]: { source: string, destination: string, root: string } } = {
     'columns.yaml': {
         source: './types/columns.yaml.ts',
         destination: './schemas/columns.yaml.json',
@@ -13,6 +13,11 @@ const configs: { [key: string]: { source: string, destination: string, root:stri
         source: './types/fields.yaml.ts',
         destination: './schemas/fields.yaml.json',
         root: 'FieldsRoot'
+    },
+    'repeater_groups.yaml': {
+        source: './types/repeater_groups.yaml.ts',
+        destination: './schemas/repeater_groups.yaml.json',
+        root: 'Groups'
     },
     'config_list.yaml': {
         source: './types/config_list.yaml.ts',

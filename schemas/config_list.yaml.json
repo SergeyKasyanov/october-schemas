@@ -2,6 +2,56 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": {},
     "definitions": {
+        "CheckboxScope": {
+            "properties": {
+                "conditions": {
+                    "type": "string"
+                },
+                "default": {
+                    "enum": [
+                        0,
+                        1,
+                        false,
+                        true
+                    ]
+                },
+                "dependsOn": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "checkbox"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "conditions",
+                "label",
+                "permissions",
+                "type"
+            ],
+            "type": "object"
+        },
         "ColorPickerColumn": {
             "properties": {
                 "align": {
@@ -70,6 +120,13 @@
                 "sortable": {
                     "type": "boolean"
                 },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                },
                 "type": {
                     "enum": [
                         "colorpicker"
@@ -130,13 +187,13 @@
                                 "$ref": "#/definitions/SelectableColumn"
                             },
                             {
+                                "$ref": "#/definitions/LinkageColumn"
+                            },
+                            {
                                 "$ref": "#/definitions/PartialColumn"
                             },
                             {
                                 "$ref": "#/definitions/ColorPickerColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/LinkageColumn"
                             },
                             {
                                 "$ref": "#/definitions/CustomColumn"
@@ -148,6 +205,45 @@
             },
             "required": [
                 "columns"
+            ],
+            "type": "object"
+        },
+        "ConfigFilterRoot": {
+            "properties": {
+                "scopes": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/CheckboxScope"
+                            },
+                            {
+                                "$ref": "#/definitions/SwitchScope"
+                            },
+                            {
+                                "$ref": "#/definitions/TextScope"
+                            },
+                            {
+                                "$ref": "#/definitions/NumberScope"
+                            },
+                            {
+                                "$ref": "#/definitions/DropdownScope"
+                            },
+                            {
+                                "$ref": "#/definitions/GroupScope"
+                            },
+                            {
+                                "$ref": "#/definitions/DateScope"
+                            },
+                            {
+                                "$ref": "#/definitions/CustomScope"
+                            }
+                        ]
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "scopes"
             ],
             "type": "object"
         },
@@ -220,6 +316,13 @@
                 "sortable": {
                     "type": "boolean"
                 },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                },
                 "type": {
                     "type": "string"
                 },
@@ -233,6 +336,42 @@
                     ]
                 }
             },
+            "type": "object"
+        },
+        "CustomScope": {
+            "additionalProperties": {},
+            "properties": {
+                "dependsOn": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "label",
+                "permissions",
+                "type"
+            ],
             "type": "object"
         },
         "DateColumn": {
@@ -303,6 +442,13 @@
                 "sortable": {
                     "type": "boolean"
                 },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                },
                 "type": {
                     "enum": [
                         "date"
@@ -323,6 +469,106 @@
                 }
             },
             "required": [
+                "type"
+            ],
+            "type": "object"
+        },
+        "DateScope": {
+            "properties": {
+                "conditions": {
+                    "properties": {
+                        "after": {
+                            "type": [
+                                "string",
+                                "boolean"
+                            ]
+                        },
+                        "before": {
+                            "type": [
+                                "string",
+                                "boolean"
+                            ]
+                        },
+                        "between": {
+                            "type": [
+                                "string",
+                                "boolean"
+                            ]
+                        },
+                        "equals": {
+                            "type": [
+                                "string",
+                                "boolean"
+                            ]
+                        },
+                        "notEquals": {
+                            "type": [
+                                "string",
+                                "boolean"
+                            ]
+                        }
+                    },
+                    "type": "object"
+                },
+                "default": {
+                    "type": "string"
+                },
+                "dependsOn": {
+                    "type": "string"
+                },
+                "firstDay": {
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                    ],
+                    "type": "number"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "maxDate": {
+                    "type": "string"
+                },
+                "minDate": {
+                    "type": "string"
+                },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "showWeekNumber": {
+                    "type": "boolean"
+                },
+                "type": {
+                    "enum": [
+                        "date"
+                    ],
+                    "type": "string"
+                },
+                "useTimezone": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "label",
+                "permissions",
                 "type"
             ],
             "type": "object"
@@ -398,6 +644,13 @@
                 "sortable": {
                     "type": "boolean"
                 },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                },
                 "type": {
                     "enum": [
                         "datetime"
@@ -418,6 +671,147 @@
                 }
             },
             "required": [
+                "type"
+            ],
+            "type": "object"
+        },
+        "DropdownScope": {
+            "properties": {
+                "conditions": {
+                    "type": "string"
+                },
+                "dependsOn": {
+                    "type": "string"
+                },
+                "emptyOption": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "modelClass": {
+                    "type": "string"
+                },
+                "options": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "dropdown"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "label",
+                "permissions",
+                "type"
+            ],
+            "type": "object"
+        },
+        "GroupScope": {
+            "properties": {
+                "conditions": {
+                    "type": "string"
+                },
+                "default": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "dependsOn": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "modelClass": {
+                    "type": "string"
+                },
+                "nameFrom": {
+                    "type": "string"
+                },
+                "options": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "group"
+                    ],
+                    "type": "string"
+                },
+                "valueFrom": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "label",
+                "permissions",
                 "type"
             ],
             "type": "object"
@@ -463,32 +857,7 @@
                     "type": "string"
                 },
                 "options": {
-                    "properties": {
-                        "mode": {
-                            "enum": [
-                                "auto",
-                                "crop",
-                                "exact",
-                                "fit",
-                                "landscape",
-                                "portrait"
-                            ],
-                            "type": "string"
-                        },
-                        "offset": {
-                            "items": {
-                                "type": "number"
-                            },
-                            "type": "array"
-                        },
-                        "quality": {
-                            "type": "number"
-                        },
-                        "sharpen": {
-                            "type": "number"
-                        }
-                    },
-                    "type": "object"
+                    "$ref": "#/definitions/ThumbsOptions"
                 },
                 "permissions": {
                     "anyOf": [
@@ -520,6 +889,13 @@
                 },
                 "sortable": {
                     "type": "boolean"
+                },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -613,6 +989,13 @@
                 "sortable": {
                     "type": "boolean"
                 },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                },
                 "type": {
                     "enum": [
                         "linkage"
@@ -641,6 +1024,19 @@
                 },
                 "maxDepth": {
                     "type": "number"
+                },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
                 },
                 "showReorder": {
                     "type": "boolean"
@@ -728,6 +1124,13 @@
                 "sortable": {
                     "type": "boolean"
                 },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                },
                 "type": {
                     "enum": [
                         "number"
@@ -745,7 +1148,76 @@
                 }
             },
             "required": [
-                "format",
+                "type"
+            ],
+            "type": "object"
+        },
+        "NumberScope": {
+            "properties": {
+                "conditions": {
+                    "properties": {
+                        "between": {
+                            "type": [
+                                "string",
+                                "boolean"
+                            ]
+                        },
+                        "exact": {
+                            "type": [
+                                "string",
+                                "boolean"
+                            ]
+                        },
+                        "greater": {
+                            "type": [
+                                "string",
+                                "boolean"
+                            ]
+                        },
+                        "lesser": {
+                            "type": [
+                                "string",
+                                "boolean"
+                            ]
+                        }
+                    },
+                    "type": "object"
+                },
+                "dependsOn": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "modelScope": {
+                    "type": "string"
+                },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "number"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "label",
+                "permissions",
                 "type"
             ],
             "type": "object"
@@ -820,6 +1292,13 @@
                 },
                 "sortable": {
                     "type": "boolean"
+                },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -929,6 +1408,13 @@
                 "sortable": {
                     "type": "boolean"
                 },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                },
                 "type": {
                     "enum": [
                         "selectable"
@@ -993,6 +1479,9 @@
                 "limitChars": {
                     "type": "number"
                 },
+                "limitWords": {
+                    "type": "number"
+                },
                 "permissions": {
                     "anyOf": [
                         {
@@ -1023,6 +1512,13 @@
                 },
                 "sortable": {
                     "type": "boolean"
+                },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -1119,6 +1615,13 @@
                 "sortable": {
                     "type": "boolean"
                 },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                },
                 "type": {
                     "enum": [
                         "switch"
@@ -1136,6 +1639,59 @@
                 }
             },
             "required": [
+                "type"
+            ],
+            "type": "object"
+        },
+        "SwitchScope": {
+            "properties": {
+                "conditions": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "default": {
+                    "enum": [
+                        0,
+                        1,
+                        false,
+                        true
+                    ]
+                },
+                "dependsOn": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "switch"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "conditions",
+                "label",
+                "permissions",
                 "type"
             ],
             "type": "object"
@@ -1208,6 +1764,13 @@
                 "sortable": {
                     "type": "boolean"
                 },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                },
                 "type": {
                     "enum": [
                         "text"
@@ -1227,6 +1790,92 @@
             "required": [
                 "type"
             ],
+            "type": "object"
+        },
+        "TextScope": {
+            "properties": {
+                "conditions": {
+                    "properties": {
+                        "contains": {
+                            "type": [
+                                "string",
+                                "boolean"
+                            ]
+                        },
+                        "exact": {
+                            "type": [
+                                "string",
+                                "boolean"
+                            ]
+                        }
+                    },
+                    "type": "object"
+                },
+                "dependsOn": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "modelScope": {
+                    "type": "string"
+                },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "text"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "label",
+                "permissions",
+                "type"
+            ],
+            "type": "object"
+        },
+        "ThumbsOptions": {
+            "properties": {
+                "mode": {
+                    "enum": [
+                        "auto",
+                        "crop",
+                        "exact",
+                        "fit",
+                        "landscape",
+                        "portrait"
+                    ],
+                    "type": "string"
+                },
+                "offset": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "type": "array"
+                },
+                "quality": {
+                    "type": "number"
+                },
+                "sharpen": {
+                    "type": "number"
+                }
+            },
             "type": "object"
         },
         "TimeColumn": {
@@ -1296,6 +1945,13 @@
                 },
                 "sortable": {
                     "type": "boolean"
+                },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -1389,6 +2045,13 @@
                 "sortable": {
                     "type": "boolean"
                 },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                },
                 "type": {
                     "enum": [
                         "timesince"
@@ -1478,6 +2141,13 @@
                 "sortable": {
                     "type": "boolean"
                 },
+                "sortableDefault": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "type": "string"
+                },
                 "type": {
                     "enum": [
                         "timetense"
@@ -1537,12 +2207,29 @@
             "type": "string"
         },
         "filter": {
-            "type": "string"
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/ConfigFilterRoot"
+                },
+                {
+                    "maxItems": 0,
+                    "minItems": 0,
+                    "type": "array"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "list": {
             "anyOf": [
                 {
                     "$ref": "#/definitions/ColumnsRoot"
+                },
+                {
+                    "maxItems": 0,
+                    "minItems": 0,
+                    "type": "array"
                 },
                 {
                     "type": "string"
@@ -1557,6 +2244,12 @@
         },
         "noRecordsMessage": {
             "type": "string"
+        },
+        "perPageOptions": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
         },
         "recordOnClick": {
             "type": "string"

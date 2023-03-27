@@ -10,4 +10,5 @@ export interface ThemeRoot {
     authorCode?: string,
     form?: string | FieldsRoot,
     require?: string[],
+    parent?: string
 }

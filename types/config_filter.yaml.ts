@@ -1,25 +1,26 @@
 interface Scope {
     label: string,
     type: string,
-    modelScope?: string,
-    dependsOn?: string
+    permissions: string | string[],
+    dependsOn?: string,
     scope?: string
 }
 
 interface CheckboxScope extends Scope {
     type: 'checkbox',
-    default?: 0 | 1,
+    default?: boolean | 1 | 0,
     conditions: string
 }
 
 interface SwitchScope extends Scope {
     type: 'switch',
-    default?: 0 | 1,
+    default?: boolean | 0 | 1,
     conditions: string[]
 }
 
 interface TextScope extends Scope {
     type: 'text',
+    modelScope?: string,
     conditions?: {
         exact?: boolean | string,
         contains?: boolean | string
@@ -28,17 +29,21 @@ interface TextScope extends Scope {
 
 interface NumberScope extends Scope {
     type: 'number',
+    modelScope?: string,
     conditions?: {
-        greater?: string,
-        between?: string
-    },
+        exact?: boolean | string,
+        greater?: boolean | string,
+        between?: boolean | string
+        lesser?: boolean | string
+    }
 }
 
 interface DropdownScope extends Scope {
     type: 'dropdown',
     modelClass?: string,
     options?: string | string[] | { [key: string]: string },
-    conditions?: string
+    conditions?: string,
+    emptyOption?: string
 }
 
 interface GroupScope extends Scope {
@@ -56,8 +61,12 @@ interface DateScope extends Scope {
     default?: string,
     minDate?: string,
     maxDate?: string,
+    firstDay?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+    showWeekNumber?: boolean,
+    useTimezone?: boolean,
     conditions?: {
-        equals?: boolean,
+        equals?: boolean | string,
+        notEquals?: boolean | string,
         between?: boolean | string,
         before?: boolean | string,
         after?: boolean | string,

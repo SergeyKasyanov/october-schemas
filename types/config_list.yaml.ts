@@ -1,4 +1,5 @@
 import { ColumnsRoot } from "./columns.yaml"
+import { ConfigFilterRoot } from "./config_filter.yaml"
 
 export interface ListStructure {
     showTree?: boolean
@@ -6,31 +7,32 @@ export interface ListStructure {
     showReorder?: boolean
     showSorting?: boolean,
     maxDepth?: number
-    dragRow?: boolean
+    dragRow?: boolean,
+    permissions?: string | string[]
 }
 
 export interface ConfigListRoot {
     // required
     title: string,
-    list: string | ColumnsRoot,
+    list: string | ColumnsRoot | [],
     modelClass: string,
 
     // optional
-    filter?: string,
+    filter?: string | ConfigFilterRoot | [],
     recordUrl?: string,
     recordOnClick?: string,
     noRecordsMessage?: string,
     deleteMessage?: string,
     noRecordsDeletedMessage?: string,
     recordsPerPage?: number,
+    perPageOptions?: string[],
     showPageNumbers?: boolean,
     showSorting?: boolean,
     showCheckboxes?: boolean,
     showSetup?: boolean,
+    structure?: ListStructure,
     customViewPath?: string,
     customPageName?: string,
-
-    structure?: ListStructure,
     defaultSort?: string | {
         column: string,
         direction: 'asc' | 'desc'

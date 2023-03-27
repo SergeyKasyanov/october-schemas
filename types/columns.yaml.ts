@@ -1,25 +1,26 @@
-interface Column {
-    type?: string,
+import { ThumbsOptions } from "./fields.yaml"
 
+interface Column {
     label?: string,
-    shortLabel?: string,
-    align?: 'left' | 'right' | 'center',
-    hidden?: boolean,
-    sortable?: boolean,
+    type?: string,
+    default?: string | number,
     searchable?: boolean,
     invisible?: boolean,
+    sortable?: boolean,
+    sortableDefault?: 'asc' | 'desc',
     clickable?: boolean,
-
+    select?: string,
     valueFrom?: string,
     displayFrom?: string,
-    default?: string | number,
-    select?: string,
     relation?: string,
     relationCount?: boolean
-    width?: string | number,
     cssClass?: string
     headCssClass?: string,
+    width?: string | number,
+    align?: 'left' | 'right' | 'center',
+    hidden?: boolean,
     permissions?: string | string[]
+    shortLabel?: string,
 }
 
 interface TextColumn extends Column {
@@ -28,19 +29,14 @@ interface TextColumn extends Column {
 
 interface NumberColumn extends Column {
     type: 'number',
-    format: string
+    format?: string
 }
 
 interface ImageColumn extends Column {
     type: 'image',
     width?: number,
     height?: number,
-    options?: {
-        mode?: 'exact' | 'portrait' | 'landscape' | 'auto' | 'fit' | 'crop',
-        offset?: number[],
-        quality?: number,
-        sharpen?: number
-    },
+    options?: ThumbsOptions
 }
 
 interface SwitchColumn extends Column {
@@ -51,6 +47,7 @@ interface SwitchColumn extends Column {
 interface SummaryColumn extends Column {
     type: 'summary',
     limitChars?: number,
+    limitWords?: number,
     endChars?: string
 }
 
@@ -83,6 +80,11 @@ interface SelectableColumn extends Column {
     options?: string | string[] | { [key: string]: string }
 }
 
+interface LinkageColumn extends Column {
+    type: 'linkage'
+    attributes?: { [key: string]: string }
+}
+
 interface PartialColumn extends Column {
     type: 'partial',
     path?: string
@@ -92,10 +94,6 @@ interface ColorPickerColumn extends Column {
     type: 'colorpicker'
 }
 
-interface LinkageColumn extends Column {
-    type: 'linkage'
-    attributes?: { [key: string]: string }
-}
 
 interface CustomColumn extends Column {
     [property: string]: any,
@@ -103,7 +101,7 @@ interface CustomColumn extends Column {
 
 export type AnyColumn = TextColumn | NumberColumn | ImageColumn | SwitchColumn | SummaryColumn
     | DateTimeColumn | DateColumn | TimeColumn | TimeSinceColumn | TimeTenseColumn
-    | SelectableColumn | PartialColumn | ColorPickerColumn | LinkageColumn | CustomColumn;
+    | SelectableColumn | LinkageColumn | PartialColumn | ColorPickerColumn | CustomColumn;
 
 export interface ColumnsRoot {
     columns: {

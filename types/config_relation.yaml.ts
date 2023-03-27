@@ -1,5 +1,6 @@
 import { ColumnsRoot } from "./columns.yaml"
 import { ConfigFilterRoot } from "./config_filter.yaml"
+import { ListStructure } from "./config_list.yaml"
 import { FieldsRoot } from "./fields.yaml"
 
 interface Mode {
@@ -18,7 +19,8 @@ interface Mode {
     scope?: string,
     searchMode?: 'all' | 'any' | 'exact',
     searchScope?: string,
-    filter?: string | ConfigFilterRoot,
+    filter?: string | ConfigFilterRoot | [],
+    customPageName?: string
 }
 
 interface ViewMode extends Mode {
@@ -28,13 +30,6 @@ interface ViewMode extends Mode {
     recordOnClick?: string,
     toolbarPartial?: string,
     toolbarButtons?: string | ('create' | 'update' | 'delete' | 'add' | 'remove' | 'link' | 'unlink')[] | false,
-    structure?: {
-        showTree: boolean,
-        treeExpanded: boolean,
-        showReorder: boolean
-        maxDepth?: number
-        dragRow?: boolean
-    }
 }
 
 interface ManageMode extends Mode {
@@ -46,6 +41,7 @@ interface RelationDefinition {
     label: string
     view?: ViewMode
     manage?: ManageMode
+    structure?: ListStructure
     pivot?: {
         form: string | {
             fields: string | FieldsRoot
@@ -54,6 +50,7 @@ interface RelationDefinition {
     emptyMessage?: string
     readOnly?: boolean
     deferredBinding?: boolean
+    popupSize?: 'giant' | 'huge' | 'large' | 'small' | 'tiny' | 'adaptive',
     customMessages?: {
         buttonCreate?: string
         buttonUpdate?: string

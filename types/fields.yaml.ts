@@ -1,7 +1,8 @@
 import { ColumnsRoot } from "./columns.yaml"
+import { Groups } from "./repeater_groups.yaml";
 
 interface Trigger {
-    action: 'show' | 'hide' | 'enable' | 'disable' | 'empty' | 'fill',
+    action: 'show' | 'hide' | 'enable' | 'disable' | 'empty' | 'fill[]' | string,
     field: string,
     condition: 'checked' | 'unchecked' | 'value[]' | string,
 }
@@ -12,39 +13,47 @@ interface Preset {
     prefixInput?: string,
 }
 
+export interface ThumbsOptions {
+    mode?: 'exact' | 'portrait' | 'landscape' | 'auto' | 'fit' | 'crop',
+    offset?: number[],
+    quality?: number,
+    sharpen?: number
+}
+
 //
 // Fields
 //
 
 interface Field {
-    type?: string,
-    label?: string,
-    value?: any,
-    valueFrom?: string,
-    default?: any,
-    defaultFrom?: string,
+    attributes?: object,
     autoFocus?: boolean,
-    readOnly?: boolean,
-    disabled?: boolean,
-    hidden?: boolean,
-    tab?: string,
-    span?: 'auto' | 'left' | 'right' | 'full' | 'adaptive' | 'row',
-    spanClass?: string,
+    changeHandler?: string,
     comment?: string,
     commentAbove?: string,
     commentHtml?: boolean,
-    context?: 'create' | 'update' | 'preview' | string | string[],
-    required?: boolean,
-    stretch?: boolean,
-    attributes?: object,
     containerAttributes?: string[] & object,
+    context?: 'create' | 'update' | 'preview' | string | string[],
     cssClass?: string,
+    default?: any,
+    defaultFrom?: string,
     dependsOn?: string | string[],
-    changeHandler?: string,
-    trigger?: Trigger,
-    preset?: string | Preset,
+    disabled?: boolean,
+    hidden?: boolean,
+    label?: string,
+    order?: number,
     permissions?: string | string[],
     placeholder?: string,
+    preset?: string | Preset,
+    readOnly?: boolean,
+    required?: boolean,
+    span?: 'auto' | 'left' | 'right' | 'full' | 'adaptive' | 'row',
+    spanClass?: string,
+    stretch?: boolean,
+    tab?: string,
+    trigger?: Trigger,
+    type?: string,
+    value?: any,
+    valueFrom?: string,
 }
 
 interface CustomField extends Field {
@@ -81,15 +90,16 @@ interface TextareaField extends Field {
 
 interface DropdownField extends Field {
     type: 'dropdown',
-    options?: string | string[] | { [key: string]: string },
+    options?: string | string[] | { [key: number | string]: number | string | string[] },
     emptyOption?: string,
     showSearch?: boolean
 }
 
 interface RadioListField extends Field {
     type: 'radio',
-    options?: string | string[] | { [key: string]: string },
-    cssClass?: 'inline-options' | string
+    options?: string | string[] | { [key: number | string]: string | number | string[] },
+    cssClass?: 'inline-options' | string,
+    inlineOptions?: boolean
 }
 
 interface BalloonSelectorField extends Field {
@@ -104,9 +114,10 @@ interface CheckboxField extends Field {
 
 interface CheckboxListField extends Field {
     type: 'checkboxlist',
-    options?: string | string[] | { [key: string]: string },
+    options?: string | string[] | { [key: number | string]: string | number | string[] },
     quickselect?: boolean,
-    cssClass?: 'inline-options' | string
+    cssClass?: 'inline-options' | string,
+    inlineOptions?: boolean
 }
 
 interface SwitchField extends Field {
@@ -125,7 +136,7 @@ interface SectionField extends Field {
 interface HintField extends Field {
     type: 'hint',
     mode?: 'tip' | 'info' | 'warning' | 'danger' | 'success',
-    path: string
+    path?: string
 }
 
 interface RulerField extends Field {
@@ -151,22 +162,35 @@ interface CodeEditorField extends Field {
 
 interface ColorPickerField extends Field {
     type: 'colorpicker',
-    availableColors?: string | string[]
+    availableColors?: string | string[],
+    allowEmpty?: boolean,
+    allowCustom?: boolean,
+    showAlpha?: boolean,
+    showInput?: boolean
 }
 
 interface DataTableField extends Field {
     type: 'datatable',
     adding?: boolean,
+    btnAddRowLabel?: string,
+    btnAddRowBelowLabel?: string,
+    btnDeleteRowLabel?: string,
     deleting?: boolean,
-    searching?: boolean,
+    dynamicHeight?: boolean,
+    fieldName?: string,
+    height?: number | false,
+    keyFrom?: number,
+    postbackHandlerName?: string,
     recordsPerPage?: number | false,
+    searching?: boolean,
+    toolbar?: string[],
     columns: {
         [column: string]: {
-            title: string,
             type: 'string' | 'checkbox' | 'dropdown' | 'autocomplete',
-            width?: number,
-            readOnly?: boolean,
             options?: string,
+            readOnly?: boolean,
+            title: string,
+            width?: number,
             validation?: {
                 integer?: {
                     allowNegative?: boolean,
@@ -200,6 +224,7 @@ interface DatePickerField extends Field {
     minDate?: string,
     maxDate?: string,
     firstDay?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+    twelveHour?: boolean,
     showWeekNumber?: boolean,
     useTimezone?: boolean
 }
@@ -216,33 +241,30 @@ interface FileUploadField extends Field {
     maxFiles?: number,
     useCaption?: boolean,
     prompt?: string,
-    attachOnUpload?: boolean,
-    thumbOptions?: {
-        mode?: 'exact' | 'portrait' | 'landscape' | 'auto' | 'fit' | 'crop',
-        offset?: number[],
-        quality?: number,
-        sharpen?: number
-    },
+    deferredBinding?: boolean,
+    thumbOptions?: ThumbsOptions
 }
 
 interface MarkdownEditorField extends Field {
     type: 'markdown',
     size?: 'tiny' | 'small' | 'large' | 'huge' | 'giant',
-    mode?: 'tab' | 'split',
+    sideBySide?: boolean
 }
 
 interface MediaFinderField extends Field {
     type: 'mediafinder',
-    mode?: 'file' | 'image',
+    mode?: 'file' | 'folder' | 'image',
     imageWidth?: number,
     imageHeight?: number,
-    maxItems?: number
+    maxItems?: number,
+    thumbOptions?: ThumbsOptions
 }
 
 interface NestedFormField extends Field {
     type: 'nestedform',
     showPanel?: boolean,
-    form: string | FieldsRoot
+    form: string | FieldsRoot,
+    defaultCreate?: boolean
 }
 
 interface RecordFinderField extends Field {
@@ -251,8 +273,7 @@ interface RecordFinderField extends Field {
     nameFrom?: string,
     descriptionFrom?: string,
     title?: string,
-    prompt?: string,
-    list: string | ColumnsRoot,
+    list: string | ColumnsRoot | [],
     recordsPerPage?: number,
     conditions?: string,
     scope?: string,
@@ -266,11 +287,12 @@ interface RelationField extends Field {
     type: 'relation',
     nameFrom?: string,
     select?: string,
-    order?: 'asc' | 'desc',
     emptyOption?: string,
+    conditions?: string,
     scope?: string,
     useController?: boolean,
-    showSearch?: boolean
+    showSearch?: boolean,
+    defaultSort?: string | string[]
 }
 
 interface RepeaterField extends Field {
@@ -278,18 +300,12 @@ interface RepeaterField extends Field {
     form: string | FieldsRoot,
     prompt?: string,
     displayMode?: 'accordion' | 'builder',
+    useTabs?: boolean,
     itemsExpanded?: boolean,
     titleFrom?: string,
     minItems?: number,
     maxItems?: number,
-    groups?: string | {
-        [group: string]: {
-            name: string,
-            description?: string,
-            icon?: string,
-            fields: FieldsRoot,
-        }
-    },
+    groups?: string | Groups,
     groupKeyFrom?: string,
     showReorder?: boolean,
     showDuplicate?: boolean,
@@ -301,8 +317,14 @@ interface RichEditorField extends Field {
     size?: 'tiny' | 'small' | 'large' | 'huge' | 'giant',
 }
 
+interface PageFinderField extends Field {
+    type: 'pagefinder',
+    singleMode?: boolean
+}
+
 interface SensitiveField extends Field {
     type: 'sensitive',
+    mode?: 'textarea' | 'text',
     allowCopy?: boolean,
     hiddenPlaceholder?: string,
     hideOnTabChange?: boolean
@@ -313,13 +335,9 @@ interface TagListField extends Field {
     mode?: 'string' | 'array' | 'relation',
     separator?: 'space' | 'comma',
     customTags?: boolean,
-    options?: string | string[] | { [key: string]: string },
+    options?: string | string[] | { [key: string]: string } | true,
     nameFrom?: string,
     useKey?: boolean,
-}
-
-interface PageFinderField extends Field {
-    type: 'pagefinder'
 }
 
 //
@@ -328,7 +346,7 @@ interface PageFinderField extends Field {
 
 export type AnyField = CustomField | TextField | NumberField | PasswordField | EmailField | TextareaField | DropdownField | RadioListField | BalloonSelectorField
     | CheckboxField | CheckboxListField | SwitchField | SectionField | HintField | RulerField | PartialField | CodeEditorField | ColorPickerField | DataTableField | DatePickerField
-    | FileUploadField | MarkdownEditorField | MediaFinderField | NestedFormField | RecordFinderField | RelationField | RepeaterField | RichEditorField | SensitiveField | TagListField | PageFinderField;
+    | FileUploadField | MarkdownEditorField | MediaFinderField | NestedFormField | RecordFinderField | RelationField | RepeaterField | RichEditorField | PageFinderField | SensitiveField | TagListField;
 
 export interface Fields {
     [field: string]: AnyField
@@ -337,10 +355,12 @@ export interface Fields {
 export interface FormTabs {
     stretch?: boolean,
     defaultTab?: string,
-    cssClass?: string,
-    lazy?: string[],
-    paneCssClass?: { [tabName: string]: string },
+    activeTab?: string | number,
     icons?: { [tabName: string]: string },
+    lazy?: string[],
+    linkable?: boolean,
+    cssClass?: string,
+    paneCssClass?: { [tabName: string]: string },
     fields: Fields
 }
 

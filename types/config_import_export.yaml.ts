@@ -2,7 +2,9 @@ export interface ConfigImportExportRoot {
     defaultRedirect?: string,
 
     defaultFormatOptions?: {
-        fileFormat?: 'json' | 'csv',
+        fileFormat?: 'json' | 'csv' | 'csv_custom',
+        customJson?: boolean,
+        firstRowTitles?: boolean,
         delimiter?: string,
         enclosure?: string,
         escape?: string,
