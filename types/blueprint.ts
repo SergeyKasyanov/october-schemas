@@ -26,9 +26,9 @@ type TailorField = (AnyField & {
 }) | MixinField | EntriesField;
 
 interface Navigation {
-    label: string,
+    label?: string,
     order?: number,
-    parent?: string,
+    parent?: 'settings' | 'content' | string,
     icon?: string,
     iconSvg?: string,
 }
@@ -36,9 +36,9 @@ interface Navigation {
 export interface Blueprint {
     uuid?: string,
     handle: string,
-    type?: 'entry' | 'single' | 'structure' | 'stream' | 'global',
+    type?: 'entry' | 'single' | 'structure' | 'stream' | 'global' | 'mixin',
     name: string,
-    fields: { [field: string]: TailorField },
+    fields?: { [field: string]: TailorField },
     columns?: { [column: string]: AnyColumn },
     scopes?: { [scope: string]: AnyScope },
     groups?: {
@@ -56,6 +56,7 @@ export interface Blueprint {
     }
     structure?: ListStructure,
     drafts?: boolean,
+    pagefinder?: boolean,
     multisite?: true | false | 'sync',
     customMessages?: { [key: 'buttonCreate' | string]: string }
     showExport?: boolean,

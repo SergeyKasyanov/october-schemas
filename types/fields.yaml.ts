@@ -31,7 +31,7 @@ interface Field {
     comment?: string,
     commentAbove?: string,
     commentHtml?: boolean,
-    containerAttributes?: string[] & object,
+    containerAttributes?: string[] | object,
     context?: 'create' | 'update' | 'preview' | string | string[],
     cssClass?: string,
     default?: any,
