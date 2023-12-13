@@ -176,6 +176,159 @@
             ],
             "type": "object"
         },
+        "BoxesField": {
+            "properties": {
+                "attributes": {
+                    "additionalProperties": true,
+                    "properties": {},
+                    "type": "object"
+                },
+                "autoFocus": {
+                    "type": "boolean"
+                },
+                "changeHandler": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "commentAbove": {
+                    "type": "string"
+                },
+                "commentHtml": {
+                    "type": "boolean"
+                },
+                "containerAttributes": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": true,
+                            "properties": {},
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    ]
+                },
+                "context": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "cssClass": {
+                    "type": "string"
+                },
+                "default": {},
+                "defaultFrom": {
+                    "type": "string"
+                },
+                "dependsOn": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "disabled": {
+                    "type": "boolean"
+                },
+                "hidden": {
+                    "type": "boolean"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "order": {
+                    "type": "number"
+                },
+                "permissions": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "placeholder": {
+                    "type": "string"
+                },
+                "preset": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Preset"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "type": "boolean"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "span": {
+                    "enum": [
+                        "adaptive",
+                        "auto",
+                        "full",
+                        "left",
+                        "right",
+                        "row"
+                    ],
+                    "type": "string"
+                },
+                "spanClass": {
+                    "type": "string"
+                },
+                "stretch": {
+                    "type": "boolean"
+                },
+                "tab": {
+                    "type": "string"
+                },
+                "trigger": {
+                    "$ref": "#/definitions/Trigger"
+                },
+                "type": {
+                    "enum": [
+                        "boxes"
+                    ],
+                    "type": "string"
+                },
+                "value": {},
+                "valueFrom": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "type": "object"
+        },
         "CheckboxField": {
             "properties": {
                 "attributes": {
@@ -1381,8 +1534,7 @@
                 }
             },
             "required": [
-                "label",
-                "type"
+                "label"
             ],
             "type": "object"
         },
@@ -2721,6 +2873,9 @@
                     },
                     {
                         "$ref": "#/definitions/TagListField"
+                    },
+                    {
+                        "$ref": "#/definitions/BoxesField"
                     }
                 ]
             },
@@ -5423,13 +5578,22 @@
                         "buttonDelete": {
                             "type": "string"
                         },
+                        "buttonDeleteMany": {
+                            "type": "string"
+                        },
                         "buttonLink": {
                             "type": "string"
                         },
                         "buttonRemove": {
                             "type": "string"
                         },
+                        "buttonRemoveMany": {
+                            "type": "string"
+                        },
                         "buttonUnlink": {
+                            "type": "string"
+                        },
+                        "buttonUnlinkMany": {
                             "type": "string"
                         },
                         "buttonUpdate": {
@@ -8236,7 +8400,17 @@
                     "type": "string"
                 },
                 "recordOnClick": {
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "enum": [
+                                false
+                            ],
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
                 },
                 "recordUrl": {
                     "type": "string"

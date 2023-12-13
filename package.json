@@ -5,5 +5,8 @@
         "ts-node": "^10.9.1",
         "tslib": "^2.4.0",
         "typescript-json-schema": "^0.53.1"
+    },
+    "scripts": {
+        "build": "node ./node_modules/.bin/ts-node app.ts"
     }
 }

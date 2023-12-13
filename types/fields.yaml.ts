@@ -340,13 +340,17 @@ interface TagListField extends Field {
     useKey?: boolean,
 }
 
+interface BoxesField extends Field {
+    type: 'boxes'
+}
+
 //
 // FieldsRoot
 //
 
 export type AnyField = CustomField | TextField | NumberField | PasswordField | EmailField | TextareaField | DropdownField | RadioListField | BalloonSelectorField
     | CheckboxField | CheckboxListField | SwitchField | SectionField | HintField | RulerField | PartialField | CodeEditorField | ColorPickerField | DataTableField | DatePickerField
-    | FileUploadField | MarkdownEditorField | MediaFinderField | NestedFormField | RecordFinderField | RelationField | RepeaterField | RichEditorField | PageFinderField | SensitiveField | TagListField;
+    | FileUploadField | MarkdownEditorField | MediaFinderField | NestedFormField | RecordFinderField | RelationField | RepeaterField | RichEditorField | PageFinderField | SensitiveField | TagListField | BoxesField;
 
 export interface Fields {
     [field: string]: AnyField

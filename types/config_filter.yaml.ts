@@ -1,6 +1,6 @@
 interface Scope {
     label: string,
-    type: string,
+    type?: string,
     permissions?: string | string[],
     dependsOn?: string,
     scope?: string

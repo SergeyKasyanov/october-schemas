@@ -367,8 +367,7 @@
                 }
             },
             "required": [
-                "label",
-                "type"
+                "label"
             ],
             "type": "object"
         },
@@ -2238,13 +2237,33 @@
             "type": "string"
         },
         "perPageOptions": {
-            "items": {
-                "type": "string"
-            },
-            "type": "array"
+            "anyOf": [
+                {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                {
+                    "items": {
+                        "type": "number"
+                    },
+                    "type": "array"
+                }
+            ]
         },
         "recordOnClick": {
-            "type": "string"
+            "anyOf": [
+                {
+                    "enum": [
+                        false
+                    ],
+                    "type": "boolean"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "recordUrl": {
             "type": "string"
