@@ -1,6 +1,155 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
+        "AnyColumn": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/TextColumn"
+                },
+                {
+                    "$ref": "#/definitions/NumberColumn"
+                },
+                {
+                    "$ref": "#/definitions/ImageColumn"
+                },
+                {
+                    "$ref": "#/definitions/SwitchColumn"
+                },
+                {
+                    "$ref": "#/definitions/SummaryColumn"
+                },
+                {
+                    "$ref": "#/definitions/DateTimeColumn"
+                },
+                {
+                    "$ref": "#/definitions/DateColumn"
+                },
+                {
+                    "$ref": "#/definitions/TimeColumn"
+                },
+                {
+                    "$ref": "#/definitions/TimeSinceColumn"
+                },
+                {
+                    "$ref": "#/definitions/TimeTenseColumn"
+                },
+                {
+                    "$ref": "#/definitions/SelectableColumn"
+                },
+                {
+                    "$ref": "#/definitions/LinkageColumn"
+                },
+                {
+                    "$ref": "#/definitions/PartialColumn"
+                },
+                {
+                    "$ref": "#/definitions/ColorPickerColumn"
+                },
+                {
+                    "$ref": "#/definitions/CustomColumn"
+                }
+            ]
+        },
+        "AnyField": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/CustomField"
+                },
+                {
+                    "$ref": "#/definitions/TextField"
+                },
+                {
+                    "$ref": "#/definitions/NumberField"
+                },
+                {
+                    "$ref": "#/definitions/PasswordField"
+                },
+                {
+                    "$ref": "#/definitions/EmailField"
+                },
+                {
+                    "$ref": "#/definitions/TextareaField"
+                },
+                {
+                    "$ref": "#/definitions/DropdownField"
+                },
+                {
+                    "$ref": "#/definitions/RadioListField"
+                },
+                {
+                    "$ref": "#/definitions/BalloonSelectorField"
+                },
+                {
+                    "$ref": "#/definitions/CheckboxField"
+                },
+                {
+                    "$ref": "#/definitions/CheckboxListField"
+                },
+                {
+                    "$ref": "#/definitions/SwitchField"
+                },
+                {
+                    "$ref": "#/definitions/SectionField"
+                },
+                {
+                    "$ref": "#/definitions/HintField"
+                },
+                {
+                    "$ref": "#/definitions/RulerField"
+                },
+                {
+                    "$ref": "#/definitions/PartialField"
+                },
+                {
+                    "$ref": "#/definitions/CodeEditorField"
+                },
+                {
+                    "$ref": "#/definitions/ColorPickerField"
+                },
+                {
+                    "$ref": "#/definitions/DataTableField"
+                },
+                {
+                    "$ref": "#/definitions/DatePickerField"
+                },
+                {
+                    "$ref": "#/definitions/FileUploadField"
+                },
+                {
+                    "$ref": "#/definitions/MarkdownEditorField"
+                },
+                {
+                    "$ref": "#/definitions/MediaFinderField"
+                },
+                {
+                    "$ref": "#/definitions/NestedFormField"
+                },
+                {
+                    "$ref": "#/definitions/RecordFinderField"
+                },
+                {
+                    "$ref": "#/definitions/RelationField"
+                },
+                {
+                    "$ref": "#/definitions/RepeaterField"
+                },
+                {
+                    "$ref": "#/definitions/RichEditorField"
+                },
+                {
+                    "$ref": "#/definitions/PageFinderField"
+                },
+                {
+                    "$ref": "#/definitions/SensitiveField"
+                },
+                {
+                    "$ref": "#/definitions/TagListField"
+                },
+                {
+                    "$ref": "#/definitions/BoxesField"
+                }
+            ]
+        },
         "BalloonSelectorField": {
             "properties": {
                 "attributes": {
@@ -158,9 +307,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "balloon-selector"
-                    ],
+                    "const": "balloon-selector",
                     "type": "string"
                 },
                 "value": {},
@@ -311,9 +458,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "boxes"
-                    ],
+                    "const": "boxes",
                     "type": "string"
                 },
                 "value": {},
@@ -466,9 +611,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "checkbox"
-                    ],
+                    "const": "checkbox",
                     "type": "string"
                 },
                 "value": {},
@@ -660,9 +803,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "checkboxlist"
-                    ],
+                    "const": "checkboxlist",
                     "type": "string"
                 },
                 "value": {},
@@ -822,9 +963,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "codeeditor"
-                    ],
+                    "const": "codeeditor",
                     "type": "string"
                 },
                 "value": {},
@@ -916,9 +1055,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "colorpicker"
-                    ],
+                    "const": "colorpicker",
                     "type": "string"
                 },
                 "valueFrom": {
@@ -1099,9 +1236,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "colorpicker"
-                    ],
+                    "const": "colorpicker",
                     "type": "string"
                 },
                 "value": {},
@@ -1118,53 +1253,7 @@
             "properties": {
                 "columns": {
                     "additionalProperties": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/definitions/TextColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/NumberColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/ImageColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/SwitchColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/SummaryColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/DateTimeColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/DateColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/TimeColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/TimeSinceColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/TimeTenseColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/SelectableColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/LinkageColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/PartialColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/ColorPickerColumn"
-                            },
-                            {
-                                "$ref": "#/definitions/CustomColumn"
-                            }
-                        ]
+                        "$ref": "#/definitions/AnyColumn"
                     },
                     "type": "object"
                 }
@@ -1624,9 +1713,7 @@
                 "height": {
                     "anyOf": [
                         {
-                            "enum": [
-                                false
-                            ],
+                            "const": false,
                             "type": "boolean"
                         },
                         {
@@ -1681,9 +1768,7 @@
                 "recordsPerPage": {
                     "anyOf": [
                         {
-                            "enum": [
-                                false
-                            ],
+                            "const": false,
                             "type": "boolean"
                         },
                         {
@@ -1727,9 +1812,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "datatable"
-                    ],
+                    "const": "datatable",
                     "type": "string"
                 },
                 "value": {},
@@ -1819,9 +1902,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "date"
-                    ],
+                    "const": "date",
                     "type": "string"
                 },
                 "useTimezone": {
@@ -2015,9 +2096,7 @@
                     "type": "boolean"
                 },
                 "type": {
-                    "enum": [
-                        "datepicker"
-                    ],
+                    "const": "datepicker",
                     "type": "string"
                 },
                 "useTimezone": {
@@ -2113,9 +2192,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "datetime"
-                    ],
+                    "const": "datetime",
                     "type": "string"
                 },
                 "useTimezone": {
@@ -2315,9 +2392,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "dropdown"
-                    ],
+                    "const": "dropdown",
                     "type": "string"
                 },
                 "value": {},
@@ -2468,9 +2543,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "email"
-                    ],
+                    "const": "email",
                     "type": "string"
                 },
                 "validation": {
@@ -2491,104 +2564,7 @@
         },
         "Fields": {
             "additionalProperties": {
-                "anyOf": [
-                    {
-                        "$ref": "#/definitions/CustomField"
-                    },
-                    {
-                        "$ref": "#/definitions/TextField"
-                    },
-                    {
-                        "$ref": "#/definitions/NumberField"
-                    },
-                    {
-                        "$ref": "#/definitions/PasswordField"
-                    },
-                    {
-                        "$ref": "#/definitions/EmailField"
-                    },
-                    {
-                        "$ref": "#/definitions/TextareaField"
-                    },
-                    {
-                        "$ref": "#/definitions/DropdownField"
-                    },
-                    {
-                        "$ref": "#/definitions/RadioListField"
-                    },
-                    {
-                        "$ref": "#/definitions/BalloonSelectorField"
-                    },
-                    {
-                        "$ref": "#/definitions/CheckboxField"
-                    },
-                    {
-                        "$ref": "#/definitions/CheckboxListField"
-                    },
-                    {
-                        "$ref": "#/definitions/SwitchField"
-                    },
-                    {
-                        "$ref": "#/definitions/SectionField"
-                    },
-                    {
-                        "$ref": "#/definitions/HintField"
-                    },
-                    {
-                        "$ref": "#/definitions/RulerField"
-                    },
-                    {
-                        "$ref": "#/definitions/PartialField"
-                    },
-                    {
-                        "$ref": "#/definitions/CodeEditorField"
-                    },
-                    {
-                        "$ref": "#/definitions/ColorPickerField"
-                    },
-                    {
-                        "$ref": "#/definitions/DataTableField"
-                    },
-                    {
-                        "$ref": "#/definitions/DatePickerField"
-                    },
-                    {
-                        "$ref": "#/definitions/FileUploadField"
-                    },
-                    {
-                        "$ref": "#/definitions/MarkdownEditorField"
-                    },
-                    {
-                        "$ref": "#/definitions/MediaFinderField"
-                    },
-                    {
-                        "$ref": "#/definitions/NestedFormField"
-                    },
-                    {
-                        "$ref": "#/definitions/RecordFinderField"
-                    },
-                    {
-                        "$ref": "#/definitions/RelationField"
-                    },
-                    {
-                        "$ref": "#/definitions/RepeaterField"
-                    },
-                    {
-                        "$ref": "#/definitions/RichEditorField"
-                    },
-                    {
-                        "$ref": "#/definitions/PageFinderField"
-                    },
-                    {
-                        "$ref": "#/definitions/SensitiveField"
-                    },
-                    {
-                        "$ref": "#/definitions/TagListField"
-                    },
-                    {
-                        "$ref": "#/definitions/BoxesField"
-                    }
-                ]
+                "$ref": "#/definitions/AnyField"
             },
             "type": "object"
         },
@@ -2789,9 +2765,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "fileupload"
-                    ],
+                    "const": "fileupload",
                     "type": "string"
                 },
                 "useCaption": {
@@ -3011,9 +2985,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "hint"
-                    ],
+                    "const": "hint",
                     "type": "string"
                 },
                 "value": {},
@@ -3108,9 +3080,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "image"
-                    ],
+                    "const": "image",
                     "type": "string"
                 },
                 "valueFrom": {
@@ -3207,9 +3177,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "linkage"
-                    ],
+                    "const": "linkage",
                     "type": "string"
                 },
                 "valueFrom": {
@@ -3378,9 +3346,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "markdown"
-                    ],
+                    "const": "markdown",
                     "type": "string"
                 },
                 "value": {},
@@ -3551,9 +3517,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "mediafinder"
-                    ],
+                    "const": "mediafinder",
                     "type": "string"
                 },
                 "value": {},
@@ -3720,9 +3684,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "nestedform"
-                    ],
+                    "const": "nestedform",
                     "type": "string"
                 },
                 "value": {},
@@ -3815,9 +3777,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "number"
-                    ],
+                    "const": "number",
                     "type": "string"
                 },
                 "valueFrom": {
@@ -3982,9 +3942,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "number"
-                    ],
+                    "const": "number",
                     "type": "string"
                 },
                 "validation": {
@@ -4144,9 +4102,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "pagefinder"
-                    ],
+                    "const": "pagefinder",
                     "type": "string"
                 },
                 "value": {},
@@ -4238,9 +4194,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "partial"
-                    ],
+                    "const": "partial",
                     "type": "string"
                 },
                 "valueFrom": {
@@ -4399,9 +4353,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "partial"
-                    ],
+                    "const": "partial",
                     "type": "string"
                 },
                 "value": {},
@@ -4552,9 +4504,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "password"
-                    ],
+                    "const": "password",
                     "type": "string"
                 },
                 "value": {},
@@ -4768,9 +4718,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "radio"
-                    ],
+                    "const": "radio",
                     "type": "string"
                 },
                 "value": {},
@@ -4874,12 +4822,12 @@
                 "list": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/ColumnsRoot"
-                        },
-                        {
                             "maxItems": 0,
                             "minItems": 0,
                             "type": "array"
+                        },
+                        {
+                            "$ref": "#/definitions/ColumnsRoot"
                         },
                         {
                             "type": "string"
@@ -4971,9 +4919,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "recordfinder"
-                    ],
+                    "const": "recordfinder",
                     "type": "string"
                 },
                 "useRelation": {
@@ -5159,9 +5105,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "relation"
-                    ],
+                    "const": "relation",
                     "type": "string"
                 },
                 "useController": {
@@ -5366,9 +5310,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "repeater"
-                    ],
+                    "const": "repeater",
                     "type": "string"
                 },
                 "useTabs": {
@@ -5566,9 +5508,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "richeditor"
-                    ],
+                    "const": "richeditor",
                     "type": "string"
                 },
                 "value": {},
@@ -5719,9 +5659,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "ruler"
-                    ],
+                    "const": "ruler",
                     "type": "string"
                 },
                 "value": {},
@@ -5872,9 +5810,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "section"
-                    ],
+                    "const": "section",
                     "type": "string"
                 },
                 "value": {},
@@ -5982,9 +5918,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "selectable"
-                    ],
+                    "const": "selectable",
                     "type": "string"
                 },
                 "valueFrom": {
@@ -6156,9 +6090,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "sensitive"
-                    ],
+                    "const": "sensitive",
                     "type": "string"
                 },
                 "value": {},
@@ -6256,9 +6188,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "summary"
-                    ],
+                    "const": "summary",
                     "type": "string"
                 },
                 "valueFrom": {
@@ -6358,9 +6288,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "switch"
-                    ],
+                    "const": "switch",
                     "type": "string"
                 },
                 "valueFrom": {
@@ -6518,9 +6446,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "switch"
-                    ],
+                    "const": "switch",
                     "type": "string"
                 },
                 "value": {},
@@ -6641,9 +6567,7 @@
                             "type": "object"
                         },
                         {
-                            "enum": [
-                                true
-                            ],
+                            "const": true,
                             "type": "boolean"
                         },
                         {
@@ -6717,9 +6641,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "taglist"
-                    ],
+                    "const": "taglist",
                     "type": "string"
                 },
                 "useKey": {
@@ -6811,9 +6733,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "text"
-                    ],
+                    "const": "text",
                     "type": "string"
                 },
                 "valueFrom": {
@@ -6971,9 +6891,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "text"
-                    ],
+                    "const": "text",
                     "type": "string"
                 },
                 "value": {},
@@ -7134,9 +7052,7 @@
                     "$ref": "#/definitions/Trigger"
                 },
                 "type": {
-                    "enum": [
-                        "textarea"
-                    ],
+                    "const": "textarea",
                     "type": "string"
                 },
                 "value": {},
@@ -7253,9 +7169,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "time"
-                    ],
+                    "const": "time",
                     "type": "string"
                 },
                 "useTimezone": {
@@ -7352,9 +7266,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "timesince"
-                    ],
+                    "const": "timesince",
                     "type": "string"
                 },
                 "valueFrom": {
@@ -7448,9 +7360,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "enum": [
-                        "timetense"
-                    ],
+                    "const": "timetense",
                     "type": "string"
                 },
                 "valueFrom": {
