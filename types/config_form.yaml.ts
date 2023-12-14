@@ -8,7 +8,7 @@ export interface ConfigFormRoot {
 
     // pages
     create?: {
-        title: string,
+        title?: string,
         form?: string | FieldsRoot,
         redirect?: string,
         redirectClose?: string,
@@ -17,7 +17,7 @@ export interface ConfigFormRoot {
         }
     },
     update?: {
-        title: string,
+        title?: string,
         form?: string | FieldsRoot,
         redirect?: string,
         redirectClose?: string,
@@ -28,7 +28,7 @@ export interface ConfigFormRoot {
         }
     },
     preview?: {
-        title: string,
+        title?: string,
         form?: string | FieldsRoot,
         customMessages?: {
             notFound?: string,
