@@ -67,6 +67,11 @@ interface Navigation {
     iconSvg?: string,
 }
 
+interface PageFinder {
+    context?: 'item' | 'list' | string,
+    replacements?: { [param: string]: string }
+}
+
 export interface Blueprint {
     uuid?: string,
     handle: string,
@@ -90,7 +95,7 @@ export interface Blueprint {
     }
     structure?: ListStructure,
     drafts?: boolean,
-    pagefinder?: boolean,
+    pagefinder?: PageFinder | 'item' | 'list' | boolean,
     multisite?: true | false | 'sync' | 'locale' | 'all',
     customMessages?: { [key: 'buttonCreate' | string]: string }
     showExport?: boolean,

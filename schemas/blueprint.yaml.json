@@ -4607,6 +4607,20 @@
             ],
             "type": "object"
         },
+        "PageFinder": {
+            "properties": {
+                "context": {
+                    "type": "string"
+                },
+                "replacements": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
         "PageFinderField": {
             "properties": {
                 "attributes": {
@@ -11912,7 +11926,19 @@
             ]
         },
         "pagefinder": {
-            "type": "boolean"
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/PageFinder"
+                },
+                {
+                    "enum": [
+                        false,
+                        "item",
+                        "list",
+                        true
+                    ]
+                }
+            ]
         },
         "parentNavigation": {
             "anyOf": [
