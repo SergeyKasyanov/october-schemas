@@ -2836,8 +2836,56 @@
                 "conditions": {
                     "type": "string"
                 },
+                "customMessages": {
+                    "properties": {
+                        "buttonAdd": {
+                            "type": "string"
+                        },
+                        "buttonCreate": {
+                            "type": "string"
+                        },
+                        "buttonDelete": {
+                            "type": "string"
+                        },
+                        "buttonDeleteMany": {
+                            "type": "string"
+                        },
+                        "buttonRemove": {
+                            "type": "string"
+                        },
+                        "buttonRemoveMany": {
+                            "type": "string"
+                        },
+                        "confirmDelete": {
+                            "type": "string"
+                        },
+                        "flashAdd": {
+                            "type": "string"
+                        },
+                        "flashCreate": {
+                            "type": "string"
+                        },
+                        "flashDelete": {
+                            "type": "string"
+                        },
+                        "flashUpdate": {
+                            "type": "string"
+                        },
+                        "titleAddForm": {
+                            "type": "string"
+                        },
+                        "titleCreateForm": {
+                            "type": "string"
+                        },
+                        "titleUpdateForm": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
                 "displayMode": {
                     "enum": [
+                        "controller",
                         "recordfinder",
                         "relation",
                         "taglist"
@@ -2855,6 +2903,30 @@
                 },
                 "source": {
                     "type": "string"
+                },
+                "toolbarButtons": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "enum": [
+                                    "add",
+                                    "create",
+                                    "delete",
+                                    "remove",
+                                    "update"
+                                ],
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "const": false,
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
                 },
                 "type": {
                     "const": "entries",
@@ -4138,6 +4210,64 @@
                 },
                 "value": {},
                 "valueFrom": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "form",
+                "type"
+            ],
+            "type": "object"
+        },
+        "NestedItemsField": {
+            "properties": {
+                "customMessages": {
+                    "properties": {
+                        "buttonCreate": {
+                            "type": "string"
+                        },
+                        "buttonDelete": {
+                            "type": "string"
+                        },
+                        "buttonDeleteMany": {
+                            "type": "string"
+                        },
+                        "confirmDelete": {
+                            "type": "string"
+                        },
+                        "flashCreate": {
+                            "type": "string"
+                        },
+                        "flashDelete": {
+                            "type": "string"
+                        },
+                        "flashUpdate": {
+                            "type": "string"
+                        },
+                        "titleCreateForm": {
+                            "type": "string"
+                        },
+                        "titleUpdateForm": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "form": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/FieldsRoot"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "maxDepth": {
+                    "type": "number"
+                },
+                "type": {
+                    "const": "nesteditems",
                     "type": "string"
                 }
             },
@@ -7230,6 +7360,9 @@
                 },
                 {
                     "$ref": "#/definitions/EntriesField"
+                },
+                {
+                    "$ref": "#/definitions/NestedItemsField"
                 },
                 {
                     "allOf": [
@@ -11757,7 +11890,9 @@
         },
         "multisite": {
             "enum": [
+                "all",
                 false,
+                "locale",
                 "sync",
                 true
             ]
