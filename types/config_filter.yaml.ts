@@ -3,7 +3,10 @@ interface Scope {
     type?: string,
     permissions?: string | string[],
     dependsOn?: string,
-    scope?: string
+    scope?: string,
+    order?: number,
+    before?: string,
+    after?: string
 }
 
 interface CheckboxScope extends Scope {

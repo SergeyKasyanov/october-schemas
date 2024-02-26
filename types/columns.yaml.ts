@@ -21,6 +21,9 @@ interface Column {
     hidden?: boolean,
     permissions?: string | string[]
     shortLabel?: string,
+    order?: number,
+    before?: string,
+    after?: string
 }
 
 interface TextColumn extends Column {
@@ -93,7 +96,6 @@ interface PartialColumn extends Column {
 interface ColorPickerColumn extends Column {
     type: 'colorpicker'
 }
-
 
 interface CustomColumn extends Column {
     [property: string]: any,
