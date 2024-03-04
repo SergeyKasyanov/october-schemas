@@ -1,7 +1,7 @@
 import { AnyColumn } from "./columns.yaml";
 import { AnyScope } from "./config_filter.yaml";
 import { ListStructure } from "./config_list.yaml";
-import { AnyField } from "./fields.yaml";
+import { AnyField, FieldsRoot } from "./fields.yaml";
 
 interface MixinField {
     type: 'mixin',
@@ -12,10 +12,44 @@ interface EntriesField {
     type: 'entries'
     source: string,
     maxItems?: number,
-    displayMode?: 'relation' | 'recordfinder' | 'taglist',
+    displayMode?: 'relation' | 'recordfinder' | 'taglist' | 'controller',
     conditions?: string,
     scope?: string,
-    inverse?: boolean
+    inverse?: boolean,
+    toolbarButtons?: string | ('create' | 'update' | 'delete' | 'add' | 'remove')[] | false,
+    customMessages?: {
+        buttonCreate?: string,
+        buttonAdd?: string,
+        buttonDelete?: string,
+        buttonDeleteMany?: string,
+        buttonRemove?: string,
+        buttonRemoveMany?: string,
+        confirmDelete?: string,
+        titleCreateForm?: string,
+        titleUpdateForm?: string,
+        titleAddForm?: string,
+        flashAdd?: string,
+        flashCreate?: string,
+        flashUpdate?: string,
+        flashDelete?: string,
+    }
+}
+
+interface NestedItemsField {
+    type: 'nesteditems'
+    maxDepth?: number,
+    form: string | FieldsRoot,
+    customMessages?: {
+        buttonCreate?: string,
+        buttonDelete?: string,
+        buttonDeleteMany?: string,
+        confirmDelete?: string,
+        titleCreateForm?: string,
+        titleUpdateForm?: string,
+        flashCreate?: string,
+        flashUpdate?: string,
+        flashDelete?: string,
+    }
 }
 
 type TailorField = (AnyField & {
@@ -23,7 +57,7 @@ type TailorField = (AnyField & {
     column?: AnyColumn | false | 'invisible',
     scope?: AnyScope | false,
     translatable?: boolean,
-}) | MixinField | EntriesField;
+}) | MixinField | EntriesField | NestedItemsField;
 
 interface Navigation {
     label?: string,
@@ -31,6 +65,11 @@ interface Navigation {
     parent?: 'settings' | 'content' | string,
     icon?: string,
     iconSvg?: string,
+}
+
+interface PageFinder {
+    context?: 'item' | 'list' | string,
+    replacements?: { [param: string]: string }
 }
 
 export interface Blueprint {
@@ -56,8 +95,8 @@ export interface Blueprint {
     }
     structure?: ListStructure,
     drafts?: boolean,
-    pagefinder?: boolean,
-    multisite?: true | false | 'sync',
+    pagefinder?: PageFinder | 'item' | 'list' | boolean,
+    multisite?: true | false | 'sync' | 'locale' | 'all',
     customMessages?: { [key: 'buttonCreate' | string]: string }
     showExport?: boolean,
     showImport?: boolean,
