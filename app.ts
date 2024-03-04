@@ -63,11 +63,20 @@ const configs: { [key: string]: { source: string, destination: string, root: str
         source: './types/blueprint.ts',
         destination: './schemas/blueprint.yaml.json',
         root: 'Blueprint'
+    },
+    'gromit-popup.yaml': {
+        source: './types/plugins/gromit/oc-popupbuilder-plugin.ts',
+        destination: './schemas/plugins/gromit-popup.yaml.json',
+        root: 'PopupConfigRoot'
     }
 };
 
 if (!fs.existsSync('./schemas')) {
     fs.mkdirSync('./schemas');
+}
+
+if (!fs.existsSync('./schemas/plugins')) {
+    fs.mkdirSync('./schemas/plugins');
 }
 
 for (const key in configs) {
