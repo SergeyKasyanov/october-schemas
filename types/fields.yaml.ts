@@ -92,7 +92,9 @@ interface DropdownField extends Field {
     type: 'dropdown',
     options?: string | string[] | { [key: number | string]: number | string | string[] },
     emptyOption?: string,
-    showSearch?: boolean
+    showSearch?: boolean,
+    optionsMethod?: string,
+    optionsPreset?: 'icons' | 'phosphorIcons' | 'locales' | 'flags' | 'timezones'
 }
 
 interface RadioListField extends Field {
@@ -292,7 +294,12 @@ interface RelationField extends Field {
     scope?: string,
     useController?: boolean,
     showSearch?: boolean,
-    defaultSort?: string | string[]
+    defaultSort?: string | string[],
+    controller?: {
+        label: string,
+        list: string,
+        form: string,
+    }
 }
 
 interface RepeaterField extends Field {
