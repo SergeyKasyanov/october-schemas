@@ -106,8 +106,47 @@ for (const key in configs) {
         const generator: TJS.JsonSchemaGenerator | null = TJS.buildGenerator(program, settings);
 
         if (generator) {
-            const schema = generator?.getSchemaForSymbol(config.root);
+            const schema = generator.getSchemaForSymbol(config.root);
             schema.title = config.title;
+
+            // hacks for enums with booleans
+            if (key === 'blueprint.yaml') {
+                for (const anyOfIndex in schema.definitions?.TailorField.anyOf) {
+                    if (Object.prototype.hasOwnProperty.call(schema.definitions?.TailorField.anyOf, anyOfIndex)) {
+                        const anyOfElement = schema.definitions.TailorField.anyOf[anyOfIndex];
+                        if (anyOfElement?.allOf && anyOfElement?.allOf[1]?.properties?.column?.anyOf) {
+                            for (const anyOf2Index in anyOfElement.allOf[1].properties.column.anyOf) {
+                                if (Object.prototype.hasOwnProperty.call(anyOfElement.allOf[1].properties.column.anyOf, anyOf2Index)) {
+                                    if (anyOfElement.allOf[1].properties?.column?.anyOf[anyOf2Index].enum) {
+                                        anyOfElement.allOf[1].properties.column.anyOf[anyOf2Index] = {
+                                            type: 'boolean'
+                                        };
+                                        anyOfElement.allOf[1].properties.column.anyOf.push({
+                                            enum: ['invisible']
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                for (const index in schema.properties?.pagefinder.anyOf) {
+                    if (Object.prototype.hasOwnProperty.call(schema.properties.pagefinder.anyOf, index)) {
+                        if (schema.properties.pagefinder.anyOf[index].enum) {
+                            schema.properties.pagefinder.anyOf[index] = {
+                                type: 'boolean'
+                            };
+                            schema.properties.pagefinder.anyOf.push({
+                                enum: [
+                                    'item',
+                                    'list'
+                                ]
+                            });
+                        }
+                    }
+                }
+            }
 
             fs.writeFileSync(destination, stringify(schema, null, 4));
         }

@@ -54,8 +54,8 @@ interface NestedItemsField {
 
 type TailorField = (AnyField & {
     validation?: string | string[],
-    column?: AnyColumn | false | 'invisible',
-    scope?: AnyScope | false,
+    column?: AnyColumn | boolean | 'invisible',
+    scope?: AnyScope | boolean,
     translatable?: boolean,
 }) | MixinField | EntriesField | NestedItemsField;
 
@@ -72,14 +72,17 @@ interface PageFinder {
     replacements?: { [param: string]: string }
 }
 
+type BlueprintColumns = { [column: string]: AnyColumn | string | boolean | 'invisible' }
+type BlueprintScopes = { [scope: string]: AnyScope | string | boolean }
+
 export interface Blueprint {
     uuid?: string,
     handle: string,
     type?: 'entry' | 'single' | 'structure' | 'stream' | 'global' | 'mixin',
     name: string,
     fields?: { [field: string]: TailorField },
-    columns?: { [column: string]: AnyColumn },
-    scopes?: { [scope: string]: AnyScope },
+    columns?: BlueprintColumns,
+    scopes?: BlueprintScopes,
     groups?: {
         [group: string]: {
             name: string,
@@ -96,7 +99,7 @@ export interface Blueprint {
     structure?: ListStructure,
     drafts?: boolean,
     pagefinder?: PageFinder | 'item' | 'list' | boolean,
-    multisite?: true | false | 'sync' | 'locale' | 'all',
+    multisite?: boolean | 'sync' | 'locale' | 'all',
     customMessages?: { [key: 'buttonCreate' | string]: string }
     showExport?: boolean,
     showImport?: boolean,
