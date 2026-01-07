@@ -50,6 +50,12 @@ interface Field {
     spanClass?: string,
     stretch?: boolean,
     tab?: string,
+    tooltip?: string | {
+        title: string,
+        isHtml?: boolean,
+        placement?: string,
+        icon?: string
+    },
     trigger?: Trigger,
     type?: string,
     value?: any,
