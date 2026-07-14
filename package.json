@@ -8,5 +8,8 @@
     },
     "scripts": {
         "build": "node ./node_modules/.bin/tsx app.ts"
+    },
+    "devDependencies": {
+        "@types/node": "^26.1.1"
     }
 }
