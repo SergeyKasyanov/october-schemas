@@ -1,7 +1,7 @@
-import { ColumnsRoot } from "./columns.yaml"
-import { ConfigFilterRoot } from "./config_filter.yaml"
-import { ListStructure } from "./config_list.yaml"
-import { FieldsRoot } from "./fields.yaml"
+import type { ColumnsRoot } from "./columns.yaml"
+import type { ConfigFilterRoot } from "./config_filter.yaml"
+import type { ListStructure } from "./config_list.yaml"
+import type { FieldsRoot } from "./fields.yaml"
 
 interface Mode {
     form?: string | FieldsRoot,

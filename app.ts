@@ -62,6 +62,12 @@ const configs: { [key: string]: { title: string, source: string, destination: st
         destination: './schemas/theme.yaml.json',
         root: 'ThemeRoot'
     },
+    'theme_seed.yaml': {
+        title: 'OctoberCMS Theme Seed',
+        source: './types/theme_seed.yaml.ts',
+        destination: './schemas/theme_seed.yaml.json',
+        root: 'ThemeSeed'
+    },
     'version.yaml': {
         title: 'OctoberCMS Version File',
         source: './types/version.yaml.ts',

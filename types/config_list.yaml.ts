@@ -1,5 +1,5 @@
-import { ColumnsRoot } from "./columns.yaml"
-import { ConfigFilterRoot } from "./config_filter.yaml"
+import type { ColumnsRoot } from "./columns.yaml"
+import type { ConfigFilterRoot } from "./config_filter.yaml"
 
 export interface ListStructure {
     showTree?: boolean
@@ -20,12 +20,12 @@ export interface ConfigListRoot {
     // optional
     filter?: string | ConfigFilterRoot | [],
     recordUrl?: string,
-    recordOnClick?: string | false,
+    recordOnClick?: 'popup' | 'popup@preview' | 'popup@update' | string | false,
     noRecordsMessage?: string,
     deleteMessage?: string,
     noRecordsDeletedMessage?: string,
     recordsPerPage?: number,
-    perPageOptions?: string[]|number[],
+    perPageOptions?: string[] | number[],
     showPageNumbers?: boolean,
     showSorting?: boolean,
     showCheckboxes?: boolean,

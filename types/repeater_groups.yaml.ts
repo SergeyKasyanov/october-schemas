@@ -1,4 +1,4 @@
-import { Fields } from "./fields.yaml"
+import type { Fields } from "./fields.yaml"
 
 interface RepeaterGroup {
     name: string,

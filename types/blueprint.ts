@@ -1,7 +1,7 @@
-import { AnyColumn } from "./columns.yaml";
-import { AnyScope } from "./config_filter.yaml";
-import { ListStructure } from "./config_list.yaml";
-import { AnyField, FieldsRoot } from "./fields.yaml";
+import type { AnyColumn } from "./columns.yaml";
+import type { AnyScope } from "./config_filter.yaml";
+import type { ListStructure } from "./config_list.yaml";
+import type { AnyField, FieldsRoot } from "./fields.yaml";
 
 interface MixinField {
     type: 'mixin',

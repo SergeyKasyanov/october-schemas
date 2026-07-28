@@ -1,13 +1,25 @@
-import { FieldsRoot } from "./fields.yaml"
+import type { FieldsRoot } from "./fields.yaml"
+
+interface PageDesign {
+    displayMode?: 'custom' | 'basic' | 'survey' | 'sidebar' | 'popup' | 'document',
+    horizontalMode?: boolean,
+    surveyMode?: boolean,
+    size?: number | 'auto',
+    sidebarSize?: number,
+    secondaryLabel?: string,
+}
 
 export interface ConfigFormRoot {
     // required
     name: string,
     form: string | FieldsRoot,
-    modelClass: string
+    modelClass: string,
+
+    design?: PageDesign,
 
     // pages
     create?: {
+        design?: PageDesign,
         title?: string,
         form?: string | FieldsRoot,
         redirect?: string,
@@ -17,6 +29,7 @@ export interface ConfigFormRoot {
         }
     },
     update?: {
+        design?: PageDesign,
         title?: string,
         form?: string | FieldsRoot,
         redirect?: string,
@@ -28,6 +41,7 @@ export interface ConfigFormRoot {
         }
     },
     preview?: {
+        design?: PageDesign,
         title?: string,
         form?: string | FieldsRoot,
         customMessages?: {

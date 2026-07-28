@@ -1,4 +1,4 @@
-import { ThumbsOptions } from "./fields.yaml"
+import type { ThumbsOptions } from "./fields.yaml"
 
 interface Column {
     label?: string,

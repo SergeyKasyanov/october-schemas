@@ -1,5 +1,5 @@
-import { ColumnsRoot } from "./columns.yaml"
-import { Groups } from "./repeater_groups.yaml";
+import type { ColumnsRoot } from "./columns.yaml";
+import type { Groups } from "./repeater_groups.yaml";
 
 interface Trigger {
     action: 'show' | 'hide' | 'enable' | 'disable' | 'empty' | 'fill[]' | string,
@@ -56,6 +56,7 @@ interface Field {
         placement?: string,
         icon?: string
     },
+    translatable?: boolean,
     trigger?: Trigger,
     type?: string,
     value?: any,
@@ -194,11 +195,16 @@ interface DataTableField extends Field {
     toolbar?: string[],
     columns: {
         [column: string]: {
-            type: 'string' | 'checkbox' | 'dropdown' | 'autocomplete',
+            type: 'string' | 'checkbox' | 'numeric' | 'dropdown' | 'autocomplete' | 'date' | 'time',
             options?: string,
             readOnly?: boolean,
             title: string,
             width?: number,
+            ellipsis?: boolean,
+            dependsOn?: string,
+            dateFormat?: string,
+            timeFormat?: string,
+            useLegacy?: boolean,
             validation?: {
                 integer?: {
                     allowNegative?: boolean,
@@ -301,6 +307,13 @@ interface RelationField extends Field {
     useController?: boolean,
     showSearch?: boolean,
     defaultSort?: string | string[],
+    quickCreate?: string | {
+        fields: string,
+        optionText?: string,
+        title?: string,
+        popupSize?: 'giant' | 'huge' | 'large' | 'small' | 'tiny' | 'adaptive',
+        context?: string,
+    },
     controller?: {
         label: string,
         list: string,

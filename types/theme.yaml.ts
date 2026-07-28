@@ -1,4 +1,4 @@
-import { FieldsRoot } from "./fields.yaml";
+import type { FieldsRoot } from "./fields.yaml";
 
 export interface ThemeRoot {
     name: string,
