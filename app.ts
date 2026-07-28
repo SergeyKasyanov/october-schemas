@@ -1,6 +1,4 @@
-import { resolve } from "path";
-import stringify from 'safe-stable-stringify';
-import * as TJS from "typescript-json-schema";
+import * as tsj from "ts-json-schema-generator";
 import * as fs from 'fs';
 
 const configs: { [key: string]: { title: string, source: string, destination: string, root: string } } = {
@@ -94,62 +92,41 @@ if (!fs.existsSync('./schemas/plugins')) {
 
 for (const key in configs) {
     if (Object.prototype.hasOwnProperty.call(configs, key)) {
-        const config = configs[key];
+        const schemaConfig = configs[key];
+        if (!schemaConfig) {
+            continue;
+        }
 
         console.log('Generating schema for ' + key + '...');
 
-        const source = config.source;
-        const destination = config.destination;
+        const config: tsj.CompletedConfig = {
+            path: schemaConfig.source,
+            tsconfig: './tsconfig.json',
+            type: schemaConfig.root,
+            minify: false,
+            schemaId: 'octobercms://' + key,
+            expose: 'all',
+            topRef: false,
+            jsDoc: 'extended',
+            markdownDescription: false,
+            fullDescription: false,
+            sortProps: true,
+            strictTuples: false,
+            skipTypeCheck: false,
+            encodeRefs: false,
+            extraTags: [],
+            additionalProperties: false,
+            discriminatorType: 'json-schema',
+            functions: 'hide',
+        };
 
-        const program: TJS.Program = TJS.getProgramFromFiles([resolve(source)],);
-        const settings: TJS.PartialArgs = { required: true, };
-        const generator: TJS.JsonSchemaGenerator | null = TJS.buildGenerator(program, settings);
+        const schema = tsj.createGenerator(config).createSchema(config.type);
+        schema.title = schemaConfig.title;
 
-        if (generator) {
-            const schema = generator.getSchemaForSymbol(config.root);
-            schema.title = config.title;
-
-            // hacks for enums with booleans
-            if (key === 'blueprint.yaml') {
-                for (const anyOfIndex in schema.definitions?.TailorField.anyOf) {
-                    if (Object.prototype.hasOwnProperty.call(schema.definitions?.TailorField.anyOf, anyOfIndex)) {
-                        const anyOfElement = schema.definitions.TailorField.anyOf[anyOfIndex];
-                        if (anyOfElement?.allOf && anyOfElement?.allOf[1]?.properties?.column?.anyOf) {
-                            for (const anyOf2Index in anyOfElement.allOf[1].properties.column.anyOf) {
-                                if (Object.prototype.hasOwnProperty.call(anyOfElement.allOf[1].properties.column.anyOf, anyOf2Index)) {
-                                    if (anyOfElement.allOf[1].properties?.column?.anyOf[anyOf2Index].enum) {
-                                        anyOfElement.allOf[1].properties.column.anyOf[anyOf2Index] = {
-                                            type: 'boolean'
-                                        };
-                                        anyOfElement.allOf[1].properties.column.anyOf.push({
-                                            enum: ['invisible']
-                                        });
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                for (const index in schema.properties?.pagefinder.anyOf) {
-                    if (Object.prototype.hasOwnProperty.call(schema.properties.pagefinder.anyOf, index)) {
-                        if (schema.properties.pagefinder.anyOf[index].enum) {
-                            schema.properties.pagefinder.anyOf[index] = {
-                                type: 'boolean'
-                            };
-                            schema.properties.pagefinder.anyOf.push({
-                                enum: [
-                                    'item',
-                                    'list'
-                                ]
-                            });
-                        }
-                    }
-                }
-            }
-
-            fs.writeFileSync(destination, stringify(schema, null, 4));
-        }
+        const schemaString = JSON.stringify(schema, null, 2);
+        fs.writeFile(schemaConfig.destination, schemaString, (err) => {
+            if (err) throw err;
+        });
     }
 }
 
